@@ -1,0 +1,6 @@
+#! /bin/sh
+
+echo " $(xbacklight -get | egrep --only-matching ".*\." | head -c -2)%"
+
+
+

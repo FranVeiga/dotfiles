@@ -1,0 +1,6 @@
+#! /bin/bash
+
+case $(printf 'No\nYes\nReboot' | dmenu -nb "#202115" -sb "#fd971f" -sf "#202115" -i -p 'Shutdown?') in 
+    Yes) shutdown now;;
+    Reboot) reboot;;
+esac

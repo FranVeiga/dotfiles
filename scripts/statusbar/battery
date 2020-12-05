@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# 🔋
+
+icon=
+case "$(acpi | grep --only-matching Charging)" in
+    Charging) icon= 
+esac
+
+
+
+
+printf "$icon$(acpi | egrep --only-matching '.?..%')%%" 
+
+

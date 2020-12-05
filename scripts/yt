@@ -1,0 +1,13 @@
+#! /bin/bash
+
+mkdir /home/franveiga/music/tmp
+mkdir /home/franveiga/music/$2 2>&1 >/dev/null
+cd /home/franveiga/music/tmp 
+echo "Enter the name of the file: "
+read name
+youtube-dl -x --audio-format "mp3" ytsearch:"$1"
+
+mv /home/franveiga/music/tmp/* "/home/franveiga/music/songs/$name.mp3"
+cd -
+rm -rf /home/franveiga/music/tmp
+ln -s "/home/franveiga/music/songs/$name.mp3" /home/franveiga/music/$2/

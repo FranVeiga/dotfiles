@@ -1,0 +1,4 @@
+#! /bin/bash
+
+random_file="/home/franveiga/pics/wallpapers/$(ls /home/franveiga/pics/wallpapers | shuf - | head -1)"
+nitrogen --set-zoom-fill $random_file & 

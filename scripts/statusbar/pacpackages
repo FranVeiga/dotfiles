@@ -1,0 +1,6 @@
+#! /bin/sh
+
+echo " $(pacman -Qu | grep -Fcv '[ignored]')"
+
+
+

@@ -1,0 +1,6 @@
+#! /bin/sh
+
+case $(printf 'No\nYes' | dmenu -i -p 'Exit dwm?') in 
+    Yes) pkill --signal 3 dwm 
+esac
+
