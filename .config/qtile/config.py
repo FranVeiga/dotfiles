@@ -35,7 +35,7 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = "alacritty"
 browser = "vivaldi-snapshot"
-scripts_path = "/home/franveiga/scripts/"
+scripts_path = os.path.expanduser("~/scripts/")
 
 colors = [
         ["#202115", "#202115"], # 0 background
@@ -184,7 +184,7 @@ keys = [
     # Keypad program shortcuts (w/shift)
     Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
     Key([mod, "shift"],          "KP_Up",     lazy.spawn("vocal"),                    desc="Vocal Podcast Client"),
-    Key([mod, "shift"],          "KP_Prior",  lazy.spawn("blueman-manager"),          desc="Bluetooth manager"),
+    Key([mod, "shift"],          "KP_Prior",  lazy.spawn("virt-manager"),          desc="Bluetooth manager"),
     Key([mod, "shift"],          "KP_Left",   lazy.spawn("minecraft"),                desc="Minecraft"),
     Key([mod, "shift"],          "KP_Begin",  lazy.spawn("emacs"),                    desc="Emacs"),
     Key([mod, "shift"],          "KP_Right",  lazy.spawn("calibre"),                  desc="Calibre"),
