@@ -284,6 +284,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'lxpolkit'},  # lxpolkit 
+    {'wname': 'TLauncher'},  # TLauncher
+    {'wname': 'TLauncher 2.72'},  # TLauncher
 ])
 
 
