@@ -90,9 +90,10 @@
 font:
   # Normal (roman) font face
   normal:
-    family: UbuntuMono Nerd Font
+    family: Hack
+    #family: UbuntuMono Nerd Font
     # The `style` can be specified to pick a specific face.
-    #   style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -100,10 +101,11 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: UbuntuMono Nerd Font
+    family: Hack
+      #family: UbuntuMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #   style: Bold
+    style: Bold
 
   # Italic font face
   italic:
@@ -111,10 +113,11 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: UbuntuMono Nerd Font 
+    family: Hack 
+      #family: UbuntuMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #   style: Italic
+    style: Italic
 
   # Bold italic font face
   #bold_italic:
@@ -128,7 +131,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -587,6 +590,8 @@ key_bindings:
   #- { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
   #- { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
   #- { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
+  - { key: U,          mods: Alt,                 action: ScrollPageUp,  }
+  - { key: D,          mods: Alt,                 action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
   #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
 

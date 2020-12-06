@@ -165,12 +165,33 @@ keys = [
     # My program shortcuts
     Key([mod],          "u", lazy.spawn(browser),                    desc="Open browser"),
     Key([mod, "shift"], "u", lazy.spawn("qutebrowser"),              desc="Open lowbrowser"),
-    Key([mod, "shift"], "e", lazy.spawn("pcmanfm"),                  desc="Open file explorer"),
+    Key([mod, "shift"], "e", lazy.spawn(f"{terminal} -e ranger"),    desc="Open file explorer"),
     Key([mod],          "a", lazy.spawn("pavucontrol"),              desc="Open pavucontrol"),
     Key([mod, "shift"], "a", lazy.spawn(f"{terminal} -e alsamixer"), desc="Open alsamixer"),
-    Key([mod],          "m", lazy.spawn(f"{terminal} -e mocp"),      desc="Open mocp"),
     Key([mod, "shift"], "p", lazy.spawn(f"{terminal} -e htop"),      desc="Open htop"),
     
+    # Keypad program shortcuts (from up to down, left to right)
+    Key([mod],          "KP_Home",    lazy.spawn(f"{terminal} -e mocp"),      desc="Mocp"),
+    Key([mod],          "KP_Up",      lazy.spawn(f"{terminal} -e castero"),   desc="Castero Podcast Client"),
+    Key([mod],          "KP_Prior",   lazy.spawn("blueman-manager"),          desc="Bluetooth manager"),
+    Key([mod],          "KP_Left",    lazy.spawn("minecraft"),                desc="Minecraft"),
+    Key([mod],          "KP_Begin",   lazy.spawn("emacs"),                    desc="Emacs"),
+    Key([mod],          "KP_Right",   lazy.spawn("cherrytree"),               desc="Cherrytree"),
+    Key([mod],          "KP_End",     lazy.spawn("gimp"),                     desc="Gimp"),
+    Key([mod],          "KP_Down",    lazy.spawn("kdenlive"),                 desc="Kdenlive"),
+    Key([mod],          "KP_Next",    lazy.spawn("krita"),                    desc="Krita"),
+
+    # Keypad program shortcuts (w/shift)
+    Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
+    Key([mod, "shift"],          "KP_Up",     lazy.spawn("vocal"),                    desc="Vocal Podcast Client"),
+    Key([mod, "shift"],          "KP_Prior",  lazy.spawn("blueman-manager"),          desc="Bluetooth manager"),
+    Key([mod, "shift"],          "KP_Left",   lazy.spawn("minecraft"),                desc="Minecraft"),
+    Key([mod, "shift"],          "KP_Begin",  lazy.spawn("emacs"),                    desc="Emacs"),
+    Key([mod, "shift"],          "KP_Right",  lazy.spawn("calibre"),                  desc="Calibre"),
+    Key([mod, "shift"],          "KP_End",    lazy.spawn("libreoffice"),              desc="LibreOffice"),
+    Key([mod, "shift"],          "KP_Down",   lazy.spawn("kdenlive"),                 desc="Kdenlive"),
+    Key([mod, "shift"],          "KP_Next",   lazy.spawn("krita"),                    desc="Krita"),
+
 
 
     # Dmenu shortcuts
@@ -198,7 +219,9 @@ keys = [
 # MY GROUPS (designed to be more flexible)
 
 # group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-group_names = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+group_names = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+
 
 groups = [Group(i, layout="tall") for i in group_names]
 
@@ -244,12 +267,33 @@ layouts = [
     layout.Floating(**layout_defaults)
 ]
 
+floating_layout = layout.Floating(float_rules=[
+    # Run the utility of `xprop` to see the wm class and name of an X client.
+    {'wmclass': 'confirm'},
+    {'wmclass': 'dialog'},
+    {'wmclass': 'download'},
+    {'wmclass': 'error'},
+    {'wmclass': 'file_progress'},
+    {'wmclass': 'notification'},
+    {'wmclass': 'splash'},
+    {'wmclass': 'toolbar'},
+    {'wmclass': 'confirmreset'},  # gitk
+    {'wmclass': 'makebranch'},  # gitk
+    {'wmclass': 'maketag'},  # gitk
+    {'wname': 'branchdialog'},  # gitk
+    {'wname': 'pinentry'},  # GPG key password entry
+    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    {'wmclass': 'lxpolkit'},  # lxpolkit 
+])
+
+
 widget_defaults = dict(
     font='Ubuntu Mono',
     fontsize=12,
     padding=3,
     background=colors[0],
-    foreground=colors[5]
+    foreground=colors[5],
+    fmt="<b>{}</b>"
 )
 extension_defaults = widget_defaults.copy()
 
@@ -273,7 +317,8 @@ screens = [
                                 margin_y=3),
 
                 widget.CurrentLayout(background=colors[3],
-                                     foreground=colors[0]),
+                                     foreground=colors[0],
+                                     fmt="{}"),
 
 
                 # widget.WindowTabs(separator="  |  "),
@@ -295,12 +340,12 @@ screens = [
                         background = colors[0],
                         foreground = colors[1],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
  
                 widget.Moc(
                         background = colors[1],
-                        fmt = '<b>{}</b>',
                         noplay_color = colors[5],
                         play_color = colors[3],
                         max_chars=25
@@ -312,63 +357,86 @@ screens = [
                         background = colors[1],
                         foreground = colors[2],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
                 widget.TextBox(text="墳",
-                               background=colors[2]),
+                               background=colors[2],
+                               fmt="{}",
+                              mouse_callbacks = {
+                                  "Button1" : lambda qtile: qtile.cmd_spawn("amixer set Master 5%+"),
+                                  "Button3" : lambda qtile: qtile.cmd_spawn("amixer set Master 5%-"),
+                                  }),
 
                 widget.Volume(volume_up_command="amixer set Master 5%+",
                               volume_down_command="amixer set Master 5%-",
-                              background=colors[2],
-                              mouse_callbacks = {
-                                  "Button1" : lazy.spawn("/bin/sh -c amixer set Master 5%+"),
-                                  "Button3" : lazy.spawn("/bin/sh -c amixer set Master 5%-")
-                                  }),
+                              background=colors[2]
+                                  ),
 
                  widget.TextBox(
                         text='',
                         background = colors[2],
                         foreground = colors[1],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
-                widget.Memory(format=" {MemUsed}Mb/{MemTotal}Mb",
-                              background = colors[1]),
+                widget.Memory(format=" <b>{MemUsed}Mb/{MemTotal}Mb</b>",
+                              background = colors[1],
+                              fmt="{}",
+                              mouse_callbacks = {
+                                  "Button1" : lambda qtile: qtile.cmd_spawn(f"{terminal} -e htop")
+                                  }),
 
                   widget.TextBox(
                         text='',
                         background = colors[1],
                         foreground = colors[2],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
-                widget.CPU(format=" {load_percent}%",
-                           background = colors[2]),
+                widget.CPU(format=" <b>{load_percent}%</b>",
+                           background = colors[2],
+                           fmt = "{}",
+                           update_interval = 3.0,
+                           mouse_callbacks = {
+                               "Button1" : lambda qtile: qtile.cmd_spawn(f"{terminal} -e htop")
+                               }),
 
                   widget.TextBox(
                         text='',
                         background = colors[2],
                         foreground = colors[1],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
 
                 widget.Battery(charge_char="",
                                discharge_char="",
-                               format="{char} {percent:2.0%}",
+                               fmt = "{}",
+                               format="{char} <b>{percent:2.0%}</b>",
                                update_interval=10,
                                background = colors[1],
-                               notify_below=0.15),
+                               notify_below=0.15,
+                               mouse_callbacks = {
+                                   "Button1" : lambda qtile: qtile.cmd_spawn("xbacklight -inc 10"),
+                                   "Button3" : lambda qtile: qtile.cmd_spawn("xbacklight -dec 10")
+                                   }
+                               ),
 
                    widget.TextBox(
                         text='',
                         background = colors[1],
                         foreground = colors[2],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
-                widget.Clock(format=' %d/%m',
-                             background = colors[2]),
+                widget.Clock(format=' <b>%d/%m</b>',
+                             background = colors[2],
+                             fmt = "{}"),
 
 
                    widget.TextBox(
@@ -376,11 +444,13 @@ screens = [
                         background = colors[2],
                         foreground = colors[1],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
 
-                widget.Clock(format=' %I:%M %p',
-                             background = colors[1]),
+                widget.Clock(format=' <b>%R</b>',
+                             background = colors[1],
+                             fmt = "{}"),
 
 
                    widget.TextBox(
@@ -388,13 +458,32 @@ screens = [
                         background = colors[1],
                         foreground = colors[2],
                         padding=0,
+                        fmt = "{}",
                         fontsize=37),
 
 
                 widget.Systray(background = colors[2],
                                margin = 5),
+                widget.TextBox(text=" ", background = colors[2]),
 
-                widget.TextBox(text=" ", background = colors[2])
+                widget.TextBox(
+                     text='',
+                     background = colors[2],
+                     foreground = colors[1],
+                     padding=0,
+                     fmt = "{}",
+                     fontsize=37),
+
+
+                widget.TextBox(
+                        text="  ", 
+                        background = colors[1],
+                        fmt = "{}",
+                        mouse_callbacks = {
+                            "Button1" : lambda qtile: qtile.cmd_spawn("dmenu_shutdown")
+                            }
+                        )
+
             ],
             20,
         ),
@@ -414,23 +503,6 @@ main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
