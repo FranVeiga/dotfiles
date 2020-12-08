@@ -127,4 +127,5 @@ alias vifm='vifm .'
 alias wifi-menu='nmtui'
 alias VirtualBoxVM='/usr/lib/virtualbox/VirtualBoxVM'
 alias doom='~/.emacs.d/bin/doom'
-
+alias qtilerc='vim ~/.config/qtile/config.py'
+alias vimp='vim -u ~/.vimrc_plugins'

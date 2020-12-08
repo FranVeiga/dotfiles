@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+filetype plugin on
 
 syntax on
 
@@ -22,36 +22,26 @@ set mouse=a
 set scrolloff=1
 set wildmenu
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-Plug 'preservim/nerdtree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'davidhalter/jedi-vim'
-Plug 'ap/vim-css-color'
-
-call plug#end()
-
 set background=dark
 
+" netrw options
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+nmap <SPACE>. :edit .<CR>
+
+" Colorscheme configurations
 let g:tokyonight_enable_italic = 1
 let g:tokyonight_style = 'night'
 let g:tokyonight_transparent_background = 1
-
 colorscheme tokyonight
 
+" Snippets
+inoremap ,h1 <h1></h1><ESC>T>i
+inoremap ,p <p></p><ESC>T>i
 
 
-nnoremap <silent> <C-B> :NERDTreeToggle %<CR>
-
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
-map  <C-q> :q!<CR>
-imap  <C-q> :q!<CR>
 map  <C-s> :w<CR>
 imap  <C-s> :w<CR>
 imap kk <ESC>
 
+nmap <Space>w <C-w>

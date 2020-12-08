@@ -129,8 +129,9 @@ keys = [
 
 
 
-    Key([mod], "p", lazy.spawn(f"dmenu_run -nb {colors[0][0]} -sb {colors[4][0]} -sf {colors[0][0]}"),
-        desc="Spawn a command using dmenu"),
+#    Key([mod], "p", lazy.spawn(f"dmenu_run -nb {colors[0][0]} -sb {colors[4][0]} -sf {colors[0][0]}"),
+#       desc="Spawn a command using dmenu"),
+     Key([mod], "p", lazy.spawn(f"rofi -show run"), desc = "Launch programs with rofi"),
 
 
 
@@ -184,9 +185,9 @@ keys = [
     # Keypad program shortcuts (w/shift)
     Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
     Key([mod, "shift"],          "KP_Up",     lazy.spawn("vocal"),                    desc="Vocal Podcast Client"),
-    Key([mod, "shift"],          "KP_Prior",  lazy.spawn("virt-manager"),          desc="Bluetooth manager"),
+    Key([mod, "shift"],          "KP_Prior",  lazy.spawn("virt-manager"),             desc="Bluetooth manager"),
     Key([mod, "shift"],          "KP_Left",   lazy.spawn("minecraft"),                desc="Minecraft"),
-    Key([mod, "shift"],          "KP_Begin",  lazy.spawn("emacs"),                    desc="Emacs"),
+    Key([mod, "shift"],          "KP_Begin",  lazy.spawn("bleachbit"),                desc="Bleachbit"),
     Key([mod, "shift"],          "KP_Right",  lazy.spawn("calibre"),                  desc="Calibre"),
     Key([mod, "shift"],          "KP_End",    lazy.spawn("libreoffice"),              desc="LibreOffice"),
     Key([mod, "shift"],          "KP_Down",   lazy.spawn("kdenlive"),                 desc="Kdenlive"),
@@ -241,7 +242,6 @@ dgroups_app_rules = []  # type: List
 
 layout_defaults = {
         "border_normal" : colors[0][0],
-        "border_focus" : colors[2][0],
         "border_width" : 2,
         "margin" : 6,
         "single_border_width" : 0,
@@ -256,7 +256,7 @@ layouts = [
     # layout.Columns(),
     # layout.Matrix(),
 
-    layout.MonadTall(**layout_defaults, name="tall"),
+    layout.MonadTall(**layout_defaults, name="tall", border_focus=colors[2][0]),
 
     # layout.MonadWide(),
     # layout.RatioTile(),
@@ -264,7 +264,7 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
-    layout.Floating(**layout_defaults)
+    layout.Floating(**layout_defaults, border_focus=colors[1][0])
 ]
 
 floating_layout = layout.Floating(float_rules=[
@@ -286,7 +286,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'lxpolkit'},  # lxpolkit 
     {'wname': 'TLauncher'},  # TLauncher
     {'wname': 'TLauncher 2.72'},  # TLauncher
-])
+    ], **layout_defaults, border_focus=colors[1][0])
 
 
 widget_defaults = dict(

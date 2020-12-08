@@ -16,4 +16,4 @@ alias vifm='vifm .'
 alias wifi-menu='nmtui'
 alias VirtualBoxVM='/usr/lib/virtualbox/VirtualBoxVM'
 alias doom='~/.emacs.d/bin/doom'
-
+alias vimp='vim -u ~/.vimrc_plugins'
