@@ -9,8 +9,22 @@
     "/home/franveiga/books/Automate the Boring Stuff with Python - Al Sweigart.epub": {
         "lastread": "1",
         "index": "20",
-        "width": "80",
+        "width": "79",
         "pos": "0",
         "pctg": "0.0"
+    },
+    "/home/franveiga/books/El camino de los reyes - Brandon Sanderson.epub": {
+        "lastread": "0",
+        "index": "8",
+        "width": "80",
+        "pos": "1",
+        "pctg": "0.005434782608695652"
+    },
+    "/home/franveiga/books/Juramentada - Brandon Sanderson.epub": {
+        "lastread": "0",
+        "index": "16",
+        "width": "60",
+        "pos": "7",
+        "pctg": "0.018276762402088774"
     }
 }

@@ -144,7 +144,7 @@ handle_image() {
             orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FILE_PATH}" )"
             ## If orientation data is present and the image actually
             ## needs rotating ("1" means no rotation)...
-            if [[ -n "$orientation" && "$orientation" != 1 ]]; then
+              if [[ -n "$orientation" && "$orientation" != 1 ]]; then
                 ## ...auto-rotate the image according to the EXIF data.
                 convert -- "${FILE_PATH}" -auto-orient "${IMAGE_CACHE_PATH}" && exit 6
             fi
@@ -171,14 +171,14 @@ handle_image() {
 
 
         ## ePub, MOBI, FB2 (using Calibre)
-        # application/epub+zip|application/x-mobipocket-ebook|\
-        # application/x-fictionbook+xml)
-        #     # ePub (using https://github.com/marianosimone/epub-thumbnailer)
-        #     epub-thumbnailer "${FILE_PATH}" "${IMAGE_CACHE_PATH}" \
-        #         "${DEFAULT_SIZE%x*}" && exit 6
-        #     ebook-meta --get-cover="${IMAGE_CACHE_PATH}" -- "${FILE_PATH}" \
-        #         >/dev/null && exit 6
-        #     exit 1;;
+         application/epub+zip|application/x-mobipocket-ebook|\
+         application/x-fictionbook+xml)
+             # ePub (using https://github.com/marianosimone/epub-thumbnailer)
+             epub-thumbnailer "${FILE_PATH}" "${IMAGE_CACHE_PATH}" \
+                 "${DEFAULT_SIZE%x*}" && exit 6
+             ebook-meta --get-cover="${IMAGE_CACHE_PATH}" -- "${FILE_PATH}" \
+                 >/dev/null && exit 6
+             exit 1;;
 
         ## Font
         application/font*|application/*opentype)

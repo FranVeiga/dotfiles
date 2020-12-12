@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import os, subprocess
 from typing import List  # noqa: F401
 
@@ -37,16 +11,39 @@ terminal = "alacritty"
 browser = "vivaldi-snapshot"
 scripts_path = os.path.expanduser("~/scripts/")
 
-colors = [
-        ["#202115", "#202115"], # 0 background
-        ["#F92672", "#F92672"], # 1 even widgets
-        ["#2a8ea1", "#2a8ea1"], # 2 odd widgets
-        ["#A6E22E", "#A6E22E"], # 3 selected group
-        ["#FD971F", "#FD971F"], # 4 window title foreground
-        ["#f8f8f2", "#f8f8f2"], # 5 foreground
-        ["#4d4d4b", "#4d4d4b"], # 5 foreground
-        ]
+# ORIGINAL COLORSCHEME
+# colors = [
+#         ["#202115", "#202115"], # 0 background
+#         ["#F92672", "#F92672"], # 1 even widgets
+#         ["#2a8ea1", "#2a8ea1"], # 2 odd widgets
+#         ["#A6E22E", "#A6E22E"], # 3 selected group
+#         ["#FD971F", "#FD971F"], # 4 window title foreground
+#         ["#f8f8f2", "#f8f8f2"], # 5 foreground
+#         ["#4d4d4b", "#4d4d4b"], # 5 foreground
+#         ]
 
+# colors = [
+#         ["#364f6b", "#364f6b"], # 0 background
+#         ["#F92672", "#F92672"], # 1 even widgets
+#         ["#3fc1c9", "#3fc1c9"], # 2 odd widgets
+#         ["#A6E22E", "#A6E22E"], # 3 selected group
+#         ["#fce38a", "#fce38a"], # 4 window title foreground
+#         ["#f8f8f2", "#f8f8f2"], # 5 foreground
+#         ["#8f8f8f", "#8f8f8f"], # 5 foreground
+#         ]
+
+
+colors = [
+         ["#060814", "#060814"], # 0 background
+         ["#f54c50", "#f54c50"], # 1 widgets1
+#          ["#61233a", "#61233a"], # 2 widgets2
+         ["#1a1e37", "#1a1e37"], # 2 widgets2
+         ["#A6E22E", "#A6E22E"], # 3 selected group (Currently not used)
+         ["#f54c50", "#f54c50"], # 4 window title foreground
+         ["#fdfafc", "#fdfafc"], # 5 foreground
+         ["#8f8f8f", "#8f8f8f"], # 5 foreground
+         ]
+ 
 
 @hook.subscribe.startup_once
 def autostart():
@@ -61,9 +58,9 @@ keys = [
     ## LAYOUT AND WINDOW MANAGEMENT BINDINGS ##
 
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.previous(),
+    Key([mod], "k", lazy.group.prev_window(),
         desc="Move focus up in stack pane"),
-    Key([mod], "j", lazy.layout.next(),
+    Key([mod], "j", lazy.group.next_window(),
         desc="Move focus down in stack pane"),
 
     # Increase or decrease the master-slave ratio
@@ -108,7 +105,7 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod], "Return", lazy.layout.swap_left(),
+    Key([mod], "Return", lazy.layout.swap_main(),
         desc="Swap window between master and slave"),
 
 
@@ -116,22 +113,30 @@ keys = [
 
     Key([mod, "shift"], "Return", lazy.spawn(terminal),
         desc="Launch terminal"),
+    Key([mod, "control"], "Return", lazy.spawn(f"{terminal} --class Float"),
+        desc="Launch terminal"),
 
 
 
     # Toggle betqeen different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "f", lazy.group.setlayout("floating"), desc="Floating layout"),
+    Key([mod], "m", lazy.group.setlayout("max"), desc="Max layout"),
+    Key([mod], "t", lazy.group.setlayout("tall"), desc="Tall layout"),
+    
+
+
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "shift"], "q", lazy.spawn(scripts_path + "dmenu_qtile_logout"), desc="Shutdown qtile using dmenu"),
+    Key([mod, "shift"], "q", lazy.spawn(scripts_path + "dmenu_qtile_logout"), desc="Shutdown qtile using rofi"),
     Key([mod, "shift", "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
 
 
 
 #    Key([mod], "p", lazy.spawn(f"dmenu_run -nb {colors[0][0]} -sb {colors[4][0]} -sf {colors[0][0]}"),
 #       desc="Spawn a command using dmenu"),
-     Key([mod], "p", lazy.spawn(f"rofi -show run"), desc = "Launch programs with rofi"),
+     Key([mod], "p", lazy.spawn(f"rofi -modi 'drun' -show drun"), desc = "Launch programs with rofi"),
 
 
 
@@ -186,17 +191,17 @@ keys = [
     Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
     Key([mod, "shift"],          "KP_Up",     lazy.spawn("vocal"),                    desc="Vocal Podcast Client"),
     Key([mod, "shift"],          "KP_Prior",  lazy.spawn("virt-manager"),             desc="Bluetooth manager"),
-    Key([mod, "shift"],          "KP_Left",   lazy.spawn("minecraft"),                desc="Minecraft"),
+    Key([mod, "shift"],          "KP_Left",   lazy.spawn("steam"),                    desc="Steam"),
     Key([mod, "shift"],          "KP_Begin",  lazy.spawn("bleachbit"),                desc="Bleachbit"),
     Key([mod, "shift"],          "KP_Right",  lazy.spawn("calibre"),                  desc="Calibre"),
     Key([mod, "shift"],          "KP_End",    lazy.spawn("libreoffice"),              desc="LibreOffice"),
-    Key([mod, "shift"],          "KP_Down",   lazy.spawn("kdenlive"),                 desc="Kdenlive"),
+    Key([mod, "shift"],          "KP_Down",   lazy.spawn("{terminal} -e epr"),        desc="Epr"),
     Key([mod, "shift"],          "KP_Next",   lazy.spawn("krita"),                    desc="Krita"),
 
 
 
     # Dmenu shortcuts
-    Key([mod, "shift"], "s", lazy.spawn(scripts_path + "dmenu_shutdown"), desc="Shutdown using dmenu")
+    Key([mod, "shift"], "s", lazy.spawn(scripts_path + "dmenu_qtile_shutdown"), desc="Shutdown using rofi")
 ]
 
 
@@ -220,11 +225,19 @@ keys = [
 # MY GROUPS (designed to be more flexible)
 
 # group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-group_names = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+group_names = [{"name":" ", "layout":"max"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"max"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"tall"},
+               {"name":" ", "layout":"tall"}
+               ]
 
 
-
-groups = [Group(i, layout="tall") for i in group_names]
+groups = [Group(group_names[i]["name"], layout=group_names[i]["layout"]) for i in range(len(group_names))]
 
 
 dgroups_key_binder = dgroups.simple_key_binder(mod)
@@ -243,9 +256,9 @@ dgroups_app_rules = []  # type: List
 layout_defaults = {
         "border_normal" : colors[0][0],
         "border_width" : 2,
-        "margin" : 6,
+        "margin" : 4,
         "single_border_width" : 0,
-        "single_margin" : 2
+        "single_margin" : 0
         }
 
 layouts = [
@@ -286,6 +299,9 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'lxpolkit'},  # lxpolkit 
     {'wname': 'TLauncher'},  # TLauncher
     {'wname': 'TLauncher 2.72'},  # TLauncher
+    {'wname': 'Picture in picture'},  # Picture in picture window for the picture-in-picture extension (by Google) for Chrome.
+    {'wmclass': 'Float'},  # Picture in picture window for the picture-in-picture extension (by Google) for Chrome.
+    {'wmclass': 'Steam'},  # Steam
     ], **layout_defaults, border_focus=colors[1][0])
 
 
@@ -306,21 +322,22 @@ screens = [
                 widget.GroupBox(hide_unused=False,
                                 font='UbuntuMono Nerd Font',
                                 fontsize=15,
+                                disable_drag=True,
                                 highlight_color=colors[4],
                                 highlight_method="block",
                                 this_current_screen_border=colors[4],
                                 block_highlight_text_color=colors[0],
                                 active=colors[5],
                                 inactive=colors[6],
-                                rounded=False,
+                                rounded=True,
                                 borderwidth=2,
                                 padding_x=3,
                                 padding_y=10,
                                 margin_y=3),
 
-                widget.CurrentLayout(background=colors[3],
-                                     foreground=colors[0],
-                                     fmt="{}"),
+                widget.CurrentLayout(background=colors[0],
+                                     foreground=colors[5],
+                                     ),
 
 
                 # widget.WindowTabs(separator="  |  "),
@@ -331,11 +348,12 @@ screens = [
                     margin = 0,
                     padding = 3,
                     icon_size = 14,
-                    markup_focused = "<span foreground='#202115'>{}</span>",
-                    markup_minimized = "<span foreground='#4d4d4b'><i>{}</i></span>",
+                    foreground = colors[1][0],
+                    markup_focused = "<span foreground='#060814'>{}</span>",
+                    markup_floating = "<span foreground=#060814><i>{}</i></span>",
+                    markup_minimized = "<span foreground=#8f8f8f><b><i>{}</i></b></span>",
                     max_title_width = 140 
                     ),
-
 
                 widget.TextBox(
                         text='',
@@ -345,15 +363,18 @@ screens = [
                         fmt = "{}",
                         fontsize=37),
 
- 
-                widget.Moc(
-                        background = colors[1],
-                        noplay_color = colors[5],
-                        play_color = colors[3],
-                        max_chars=25
-                        ),
+                widget.KeyboardLayout(
+                    background = colors[1],
+                    configured_keyboards = ["latam", "us"],
+                    display_map = {
+                        "us":"us",
+                        "latam":"es",
+                        },
+                    fmt = " <b>{}</b>",
 
 
+                    ),
+               
                 widget.TextBox(
                         text='',
                         background = colors[1],
