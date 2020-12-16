@@ -99,36 +99,45 @@ export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga
 export GTK_THEME=gtk-master
 export GITHUB="https://github.com/FranVeiga/"
 
+# Set Vim mode
+bindkey -v
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias cls=' clear'
-alias ls='exa --group-directories-first'
-alias la='ls -aF'
-alias ll='la -lahF'
-alias lst='ls -lahTFL 3'
-alias lr='ls -lahRFL 3'
-alias python='python3'
-alias pip='pip3'
-alias rm='rm -vri'
-alias cd..='cd ..'
-alias pacman='sudo pacman'
-alias puto='clear && printf "\nPero escuchame una cosa hijo de re mil puta a mi no me decis puto \nme escuchaste pendejito de mierda asi que no te pases de vivo que te rompo todo \nla re concha de tu madre\n\n"'
-alias reputo='puto'
-alias skuni='clear && printf  "\nskiuniiiiiiii\n\n"'
-alias te_volvi_a_probar='echo tu boca no pierde sabor a caramelo oo oo oo oo'
-alias vifm='vifm .'
-alias wifi-menu='nmtui'
-alias VirtualBoxVM='/usr/lib/virtualbox/VirtualBoxVM'
-alias doom='~/.emacs.d/bin/doom'
-alias qtilerc='vim ~/.config/qtile/config.py'
-alias vimp='vim -u ~/.vimrc_plugins'
-alias mv='mv -vi'
-alias cp='cp -riv'
-alias mkdir='mkdir -vp'
+# alias zshconfig="vim ~/.zshrc"
+# alias ohmyzsh="vim ~/.oh-my-zsh"
+# alias cls=' clear'
+# alias ls='exa --group-directories-first'
+# alias la='ls -aF'
+# alias ll='la -lahF'
+# alias lst='ls -lahTFL 3'
+# alias lr='ls -lahRFL 3'
+# alias python='python3'
+# alias pip='pip3'
+# alias rm='rm -vri'
+# alias cd..='cd ..'
+# alias pacman='sudo pacman'
+# alias puto='clear && printf "\nPero escuchame una cosa hijo de re mil puta a mi no me decis puto \nme escuchaste pendejito de mierda asi que no te pases de vivo que te rompo todo \nla re concha de tu madre\n\n"'
+# alias reputo='puto'
+# alias skuni='clear && printf  "\nskiuniiiiiiii\n\n"'
+# alias te_volvi_a_probar='echo tu boca no pierde sabor a caramelo oo oo oo oo'
+# alias vifm='vifm .'
+# alias wifi-menu='nmtui'
+# alias VirtualBoxVM='/usr/lib/virtualbox/VirtualBoxVM'
+# alias doom='~/.emacs.d/bin/doom'
+# alias qtilerc='vim ~/.config/qtile/config.py'
+# alias vimp='vim -u ~/.vimrc_plugins'
+# alias mv='mv -vi'
+# alias cp='cp -riv'
+# alias mkdir='mkdir -vp'

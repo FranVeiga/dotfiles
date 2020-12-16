@@ -2,6 +2,10 @@ set nocompatible
 filetype plugin on
 
 
+" Set leader key
+let mapleader = " "
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'ap/vim-css-color'
@@ -52,20 +56,31 @@ nnoremap <C-b> :let g:tokyonight_transparent_background = 0<CR>:colorscheme toky
 " Snippets
 inoremap ,h1 <h1></h1><ESC>T>i
 inoremap ,p <p></p><ESC>T>i
+inoremap ,li <p></p><ESC>T>i
 
 
 map  <C-s> :w<CR>
 imap  <C-s> :w<CR>
 imap kk <ESC>
 
+" use ,t on insert mode to insert a tag (doesn't work on normal mode)
+function! InsertTag(tag)
+    execute "normal i<" . a:tag . "></" . a:tag . ">\<Esc>bbl"
+    execute "startinsert"
+endfunction
+imap ,t <ESC>:call InsertTag(input(""))<cr>
+
+
+"" leader keybinds
+
+noremap <leader>fs :w<cr>
+noremap <leader>fS :wq<cr>
+noremap <leader>fq :q!<cr>
+
 
 
 " comment keybind
-map <C-]> <ESC>0i#<SPACE><ESC>
-
-
-" Set leader key
-let mapleader = " "
+noremap <leader>ic <ESC>0i#<SPACE><ESC>
 
 " window movement
 noremap <leader>wj <C-w>j

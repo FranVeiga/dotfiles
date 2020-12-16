@@ -4,10 +4,9 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget, dgroups, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "alacritty" # Alacritty is the recommended terminal, you'll probably have errors if you don't use it.
 browser = "vivaldi-snapshot"
 scripts_path = os.path.expanduser("~/scripts/")
 
@@ -177,15 +176,15 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn(f"{terminal} -e htop"),      desc="Open htop"),
     
     # Keypad program shortcuts (from up to down, left to right)
-    Key([mod],          "KP_Home",    lazy.spawn(f"{terminal} -e mocp"),      desc="Mocp"),
-    Key([mod],          "KP_Up",      lazy.spawn(f"{terminal} -e castero"),   desc="Castero Podcast Client"),
-    Key([mod],          "KP_Prior",   lazy.spawn("blueman-manager"),          desc="Bluetooth manager"),
-    Key([mod],          "KP_Left",    lazy.spawn("minecraft"),                desc="Minecraft"),
-    Key([mod],          "KP_Begin",   lazy.spawn("emacs"),                    desc="Emacs"),
-    Key([mod],          "KP_Right",   lazy.spawn("cherrytree"),               desc="Cherrytree"),
-    Key([mod],          "KP_End",     lazy.spawn("gimp"),                     desc="Gimp"),
-    Key([mod],          "KP_Down",    lazy.spawn("kdenlive"),                 desc="Kdenlive"),
-    Key([mod],          "KP_Next",    lazy.spawn("krita"),                    desc="Krita"),
+    Key([mod],          "KP_Home",    lazy.spawn(f"{terminal} --class mocp -e mocp"),         desc="Mocp"),
+    Key([mod],          "KP_Up",      lazy.spawn(f"{terminal} --class castero -e castero"),   desc="Castero Podcast Client"),
+    Key([mod],          "KP_Prior",   lazy.spawn("blueman-manager"),                          desc="Bluetooth manager"),
+    Key([mod],          "KP_Left",    lazy.spawn("minecraft"),                                desc="Minecraft"),
+    Key([mod],          "KP_Begin",   lazy.spawn("emacs"),                                    desc="Emacs"),
+    Key([mod],          "KP_Right",   lazy.spawn("cherrytree"),                               desc="Cherrytree"),
+    Key([mod],          "KP_End",     lazy.spawn("gimp"),                                     desc="Gimp"),
+    Key([mod],          "KP_Down",    lazy.spawn("kdenlive"),                                 desc="Kdenlive"),
+    Key([mod],          "KP_Next",    lazy.spawn("krita"),                                    desc="Krita"),
 
     # Keypad program shortcuts (w/shift)
     Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
@@ -222,28 +221,81 @@ keys = [
 #         #     desc="move focused window to group {}".format(i.name)),
 #     ])
 
-# MY GROUPS (designed to be more flexible)
+# MY GROUPS
+
 
 # group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-group_names = [{"name":" ", "layout":"max"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"max"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"tall"},
-               {"name":" ", "layout":"tall"}
+group_params = [
+               {"label":" ", "layout":"max"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"max"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"}
                ]
 
 
-groups = [Group(group_names[i]["name"], layout=group_names[i]["layout"]) for i in range(len(group_names))]
+# groups = [Group(group_names[i]["name"], layout=group_names[i]["layout"], label=group_names[i]["label"]) for i in range(len(group_names))]
+groups = [Group(f"{i + 1}", **group_params[i]) for i in range(len(group_params))]
 
 
 dgroups_key_binder = dgroups.simple_key_binder(mod)
 dgroups_app_rules = []  # type: List
 
 
+# List of browser wmclasses
+browser_wmclasses = [
+        "firefox",
+        "qutebrowser",
+        "vivaldi-snapshot",
+        "brave-browser",
+        "chromium",
+        ]
+
+# List of virtualization programs's wmclasses
+virt_wmclasses = [
+        "virt-manager",
+        "VirtualBox Manager",
+        ]
+
+# List of gaming programs's wmclasses
+games_wmclasses = [
+        "Steam",
+        "TLauncher",
+        "TLauncher 2.74",
+        ]
+
+# List of music program's wmclasses
+music_wmclasses = [
+        "mocp",
+        "castero",
+        "vocal",
+        "pragha",
+        ]
+
+# Send certain programs to certain groups and switch to those groups
+@hook.subscribe.client_new
+def change_screen(client):
+    for wmclass in client.window.get_wm_class():
+        if wmclass in browser_wmclasses or client.name in browser_wmclasses:
+            client.togroup("1", switch_group = True)
+            break
+        elif wmclass in games_wmclasses or client.name in games_wmclasses:
+            client.togroup("5", switch_group = True)
+            break
+        elif wmclass in virt_wmclasses or client.name in virt_wmclasses:
+            client.togroup("6", switch_group = True)
+            break
+        elif wmclass in music_wmclasses or client.name in music_wmclasses:
+            client.togroup("9", switch_group = True)
+            break
+
+
+
+# Colors
 # #272822 0
 # #F92672 1
 # #66D9EF 2
@@ -298,11 +350,14 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'lxpolkit'},  # lxpolkit 
     {'wname': 'TLauncher'},  # TLauncher
-    {'wname': 'TLauncher 2.72'},  # TLauncher
+    {'wname': 'TLauncher 2.74'},  # TLauncher
     {'wname': 'Picture in picture'},  # Picture in picture window for the picture-in-picture extension (by Google) for Chrome.
     {'wmclass': 'Float'},  # Picture in picture window for the picture-in-picture extension (by Google) for Chrome.
     {'wmclass': 'Steam'},  # Steam
+    {'wmclass': 'Orage'},  # Orage
+    {'wmclass': 'Globaltime'},  # Orage globaltime
     ], **layout_defaults, border_focus=colors[1][0])
+
 
 
 widget_defaults = dict(

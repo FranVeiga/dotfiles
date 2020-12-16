@@ -19,8 +19,15 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 12)
-      doom-variable-pitch-font (font-spec :family "Droid Sans" :size 13))
+(setq doom-font (font-spec :family "UbuntuMono Nerd Font" :size 16)
+      doom-variable-pitch-font (font-spec :family "UbuntuMono Nerd Font" :size 16))
+(after! doom-themes
+        (setq doom-themes-enable-bold t
+              doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+
 
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -31,7 +38,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/docs/org/")
+;; (setq org-directory "~/docs/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -61,3 +68,17 @@
 
 (map! :i "M-RET" 'evil-force-normal-state)
 
+;; org-mode settings
+(after! org
+  (setq org-agenda-files (directory-files-recursively "~/docs/org/" "\\.org$"))
+  (setq org-hide-emphasis-markers t)
+  (map! :leader
+        :desc "Open org index file"
+        "o o" #'(lambda() (interactive) (find-file "~/docs/org/index.org")))
+  (custom-set-faces
+        '(org-level-1 ((t (:inherit outline-1 :height 1.75))))
+        '(org-level-2 ((t (:inherit outline-2 :height 1.5))))
+        '(org-level-3 ((t (:inherit outline-3 :height 1.25))))
+        '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+)
+  )
