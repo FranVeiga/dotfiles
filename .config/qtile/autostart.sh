@@ -1,5 +1,7 @@
 #! /bin/sh
 
+rfkill unblock bluetooth &  # CAREFUL user has to be in the rfkill group.
+
 picom &
 nitrogen --restore &
 lxpolkit &
@@ -7,7 +9,10 @@ lxpolkit &
 nm-applet &
 blueman-applet &
 pamac-tray &
+protonvpn-tray &
 redshift-gtk &    	 
+emacs --daemon &
+
 
 
 

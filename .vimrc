@@ -1,5 +1,6 @@
 set nocompatible
-filetype plugin on
+filetype plugin indent on
+syntax on
 
 
 " Set leader key
@@ -16,7 +17,6 @@ call plug#end()
 
 
 
-syntax on
 
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -37,6 +37,7 @@ set autochdir
 set mouse=a
 set scrolloff=1
 set wildmenu
+set showcmd
 
 set background=dark
 
@@ -77,6 +78,10 @@ noremap <leader>fs :w<cr>
 noremap <leader>fS :wq<cr>
 noremap <leader>fq :q!<cr>
 
+" Vim
+noremap <leader>qr :source $MYVIMRC<cr>
+noremap <leader>qq :q<cr>
+noremap <leader>qQ :q!<cr>
 
 
 " comment keybind
@@ -100,20 +105,5 @@ noremap <leader>w> :vert res +10<CR>
 
 
 " tabs
-noremap <leader><TAB>n :tabnew
-noremap <leader><TAB>c :tabclose
-
-
-
-
-" PYTHON OPTIONS
-
-autocmd FileType python set breakindent
-autocmd FileType python nmap ,! i#! /usr/bin/python3<CR><CR><ESC>
-
-
-" BASH OPTIONS
-autocmd FileType sh nmap ,! i#! /bin/bash<CR><CR><ESC>
-
-
-
+noremap <leader><TAB>n :tabnew<cr>
+noremap <leader><TAB>c :tabclose<cr>

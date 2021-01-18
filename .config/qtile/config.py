@@ -7,7 +7,7 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 terminal = "alacritty" # Alacritty is the recommended terminal, you'll probably have errors if you don't use it.
-browser = "vivaldi-snapshot"
+browser = "firefox"
 scripts_path = os.path.expanduser("~/scripts/")
 
 # ORIGINAL COLORSCHEME
@@ -43,14 +43,12 @@ colors = [
          ["#8f8f8f", "#8f8f8f"], # 5 foreground
          ]
  
-
 @hook.subscribe.startup_once
 def autostart():
     startup_script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.call([startup_script])
 
-
-
+# Keybindings
 keys = [
 
 
@@ -168,12 +166,12 @@ keys = [
 
 
     # My program shortcuts
-    Key([mod],          "u", lazy.spawn(browser),                    desc="Open browser"),
-    Key([mod, "shift"], "u", lazy.spawn("qutebrowser"),              desc="Open lowbrowser"),
-    Key([mod, "shift"], "e", lazy.spawn(f"{terminal} -e ranger"),    desc="Open file explorer"),
-    Key([mod],          "a", lazy.spawn("pavucontrol"),              desc="Open pavucontrol"),
-    Key([mod, "shift"], "a", lazy.spawn(f"{terminal} -e alsamixer"), desc="Open alsamixer"),
-    Key([mod, "shift"], "p", lazy.spawn(f"{terminal} -e htop"),      desc="Open htop"),
+    Key([mod],          "u", lazy.spawn(browser),                                  desc="Open browser"),
+    Key([mod, "shift"], "u", lazy.spawn("qutebrowser"),                            desc="Open lowbrowser"),
+    Key([mod, "shift"], "e", lazy.spawn(f"{terminal} -e ranger"),                  desc="Open file explorer"),
+    Key([mod],          "a", lazy.spawn("pavucontrol"),                            desc="Open pavucontrol"),
+    Key([mod, "shift"], "a", lazy.spawn(f"{terminal} --class pamix -e pamix"),     desc="Open pamix"), # TUI alternative to pavucontrol
+    Key([mod, "shift"], "p", lazy.spawn(f"{terminal} -e htop"),                    desc="Open htop"),
     
     # Keypad program shortcuts (from up to down, left to right)
     Key([mod],          "KP_Home",    lazy.spawn(f"{terminal} --class mocp -e mocp"),         desc="Mocp"),
@@ -201,6 +199,7 @@ keys = [
 
     # Dmenu shortcuts
     Key([mod, "shift"], "s", lazy.spawn(scripts_path + "dmenu_qtile_shutdown"), desc="Shutdown using rofi")
+
 ]
 
 
@@ -274,6 +273,7 @@ music_wmclasses = [
         "castero",
         "vocal",
         "pragha",
+        "Spotify",
         ]
 
 # Send certain programs to certain groups and switch to those groups
@@ -356,6 +356,8 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Steam'},  # Steam
     {'wmclass': 'Orage'},  # Orage
     {'wmclass': 'Globaltime'},  # Orage globaltime
+    {'wmclass': 'pavucontrol'},  # Pavucontrol audio mixer
+    {'wmclass': 'pamix'},  # Pamix audio mixer
     ], **layout_defaults, border_focus=colors[1][0])
 
 
@@ -390,9 +392,9 @@ screens = [
                                 padding_y=10,
                                 margin_y=3),
 
-                widget.CurrentLayout(background=colors[0],
-                                     foreground=colors[5],
-                                     ),
+#                 widget.CurrentLayout(background=colors[0],
+#                                      foreground=colors[5],
+#                                      ),
 
 
                 # widget.WindowTabs(separator="  |  "),
@@ -405,7 +407,6 @@ screens = [
                     icon_size = 14,
                     foreground = colors[1][0],
                     markup_focused = "<span foreground='#060814'>{}</span>",
-                    markup_floating = "<span foreground=#060814><i>{}</i></span>",
                     markup_minimized = "<span foreground=#8f8f8f><b><i>{}</i></b></span>",
                     max_title_width = 140 
                     ),
