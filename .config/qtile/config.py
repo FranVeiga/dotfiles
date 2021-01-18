@@ -5,6 +5,7 @@ from libqtile import bar, layout, widget, dgroups, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 
+# sets the modifier key.
 mod = "mod4"
 terminal = "alacritty" # Alacritty is the recommended terminal, you'll probably have errors if you don't use it.
 browser = "firefox"
