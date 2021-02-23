@@ -11,7 +11,6 @@ blueman-applet &
 pamac-tray &
 protonvpn-tray &
 redshift-gtk &    	 
-emacs --daemon &
 
 
 

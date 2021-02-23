@@ -69,9 +69,9 @@ keys = [
 
     # Increase or decrease slave window size
     Key([mod, "shift"], "l", lazy.layout.grow(),
-        desc="Increase the size of the master window"),
+        desc="Icrease the height of the focused window"),
     Key([mod, "shift"], "h", lazy.layout.shrink(),
-        desc="Decrease the size of the master window"),
+        desc="Decrease the height of the selected window"),
 
     # Move windows up or down in current stack
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(),
@@ -164,6 +164,9 @@ keys = [
     Key([mod, "shift"], "z", lazy.spawn("xbacklight -dec 10"), desc= "Decrease Brightness"),
 
 
+    # Youtube MPV shortcut
+    Key([mod], "y", lazy.spawn("bash -c 'mpv --x11-name=Float --autofit=500 $(xclip -selection clipboard -o)'"), desc="Spawn mpv to play with the video link in the clipboard"),
+        
 
 
     # My program shortcuts
@@ -183,7 +186,7 @@ keys = [
     Key([mod],          "KP_Right",   lazy.spawn("cherrytree"),                               desc="Cherrytree"),
     Key([mod],          "KP_End",     lazy.spawn("gimp"),                                     desc="Gimp"),
     Key([mod],          "KP_Down",    lazy.spawn("kdenlive"),                                 desc="Kdenlive"),
-    Key([mod],          "KP_Next",    lazy.spawn("krita"),                                    desc="Krita"),
+    Key([mod],          "KP_Next",    lazy.spawn("freetube-bin"),                                    desc="FreeTube"),
 
     # Keypad program shortcuts (w/shift)
     Key([mod, "shift"],          "KP_Home",   lazy.spawn("spotify"),                  desc="Spotify"),
@@ -229,12 +232,12 @@ group_params = [
                {"label":" ", "layout":"max"},
                {"label":" ", "layout":"tall"},
                {"label":" ", "layout":"tall"},
-               {"label":" ", "layout":"tall"},
+               {"label":" ", "layout":"tall"},
                {"label":" ", "layout":"tall"},
                {"label":" ", "layout":"max"},
                {"label":" ", "layout":"tall"},
                {"label":" ", "layout":"tall"},
-               {"label":" ", "layout":"tall"}
+               {"label":" ", "layout":"tall"}
                ]
 
 
@@ -284,14 +287,14 @@ def change_screen(client):
         if wmclass in browser_wmclasses or client.name in browser_wmclasses:
             client.togroup("1", switch_group = True)
             break
+        elif wmclass in music_wmclasses or client.name in music_wmclasses:
+            client.togroup("4", switch_group = True)
+            break
         elif wmclass in games_wmclasses or client.name in games_wmclasses:
             client.togroup("5", switch_group = True)
             break
         elif wmclass in virt_wmclasses or client.name in virt_wmclasses:
             client.togroup("6", switch_group = True)
-            break
-        elif wmclass in music_wmclasses or client.name in music_wmclasses:
-            client.togroup("9", switch_group = True)
             break
 
 
