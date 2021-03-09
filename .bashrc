@@ -111,5 +111,5 @@ fi
 export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar
 export GTK_THEME=gtk-master
 export GITHUB="https://github.com/FranVeiga/"
-
+export EDITOR=/usr/bin/vim
 

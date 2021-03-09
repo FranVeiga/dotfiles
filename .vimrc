@@ -32,6 +32,7 @@ set noswapfile
 set nobackup
 set undofile
 set undodir=~/.vim/undodir
+set undolevels=5000
 set incsearch
 set autochdir
 set mouse=a
