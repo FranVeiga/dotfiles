@@ -7,7 +7,7 @@ super + shift + Return
 	alacritty
 
 # program launcher
-super + r
+super + p
 	rofi -modi drun -show drun
 
 # make sxhkd reload its configuration files:
@@ -36,7 +36,7 @@ super + y
 
 # swap the current node and the biggest window
 super + g
-	bspc node -s biggest.window
+	bspc node -s biggest.window.local
 
 #
 # state/flags
@@ -67,7 +67,7 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 #same but with other keys
 super + {comma,period}
-	bspc node -f {next,prev}.local.!hidden.window
+	bspc node -f {prev,next}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -164,15 +164,23 @@ super + shift + s
 
 # Browser
 super + {_,shift +}u
-    {firefox,qutebrowser}
+    {firefox,vivaldi-snapshot}
 
 # File browser
 super + e
     alacritty -e ranger
 
+# Email client
+super + shift + e
+    thunderbird
+
 # Volume control
 super + {_,shift +}a
-    {pavucontrol,alacritty -e pamix}
+    {pavucontrol,alacritty --class pamix -e pamix}
+
+# Task manager
+super + shift + p
+    alacritty -e htop
 
 
 
@@ -183,7 +191,7 @@ super + {_,shift +}KP_Home
 super + {_,shift +}KP_Up
     {alacritty --class castero -e castero,vocal}
 
-super + {_,shift +}KP_Up
+super + {_,shift +}KP_Prior
     {blueman-manager,virt-manager}
 
 super + {_,shift +}KP_Left
