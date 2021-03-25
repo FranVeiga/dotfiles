@@ -3,12 +3,12 @@ bspc -r "*"
 
 ### AUTOSTART
 
-killall picom; picom -b &
+picom -b &
 nitrogen --restore
 lxpolkit &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-killall redshift; killall redshift-gtk; redshift-gtk &    	 
+killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	 
 
 # Uncomment if you have a system tray enabled
 # killall nm-applet; nm-applet &
@@ -50,7 +50,9 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
-
+# WS I and VI monocle by default
+bspc desktop I -l next
+bspc desktop VI -l next
 
 # RULES
 
@@ -77,7 +79,8 @@ bspc rule -a *:lxpolkit state=floating
 bspc rule -a *:*:'Picture in picture' state=floating
 bspc rule -a *:Steam state=floating
 bspc rule -a *:pavucontrol state=floating
-bspc rule -a *:pamix state=floating 
+bspc rule -a *:pulsemixer state=floating rectangle=500x250+440+275 sticky=on
+bspc rule -a *:htop state=floating rectangle=900x600+233+75 sticky=on
 bspc rule -a *:Float state=floating
 bspc rule -a *:emacs state=tiled
 
@@ -102,7 +105,7 @@ bspc rule -a *:*:TLauncher desktop='^5' follow=on
 bspc rule -a *:*:'TLauncher 2.74' desktop='^5' follow=on
 
 # Music
-bspc rule -a *:mocp desktop='^4' follow=on
+bspc rule -a *:ncspot desktop='^4' follow=on
 bspc rule -a *:castero desktop='^4' follow=on
 bspc rule -a *:vocal desktop='^4' follow=on
 bspc rule -a *:pragha desktop='^4' follow=on

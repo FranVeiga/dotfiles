@@ -34,7 +34,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 
-(setq doom-theme 'doom-monokai-classic)
+(setq doom-theme 'doom-challenger-deep)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -70,15 +70,16 @@
 
 ;; org-mode settings
 (after! org
-  (setq org-agenda-files (directory-files-recursively "~/docs/org/" "\\.org$"))
+  (setq org-agenda-files (directory-files-recursively "~/org-wiki/" "\\.org$"))
+  (setq org-directory "~/org-wiki/notes")
   (setq org-hide-emphasis-markers t)
   (map! :leader
         :desc "Open org index file"
-        "o o" #'(lambda() (interactive) (find-file "~/docs/org/index.org")))
+        "o o" #'(lambda() (interactive) (find-file "~/org-wiki/index.org")))
   (custom-set-faces
-        '(org-level-1 ((t (:inherit outline-1 :height 1.75))))
-        '(org-level-2 ((t (:inherit outline-2 :height 1.5))))
-        '(org-level-3 ((t (:inherit outline-3 :height 1.25))))
+        '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
+        '(org-level-2 ((t (:inherit outline-2 :height 1.3))))
+        '(org-level-3 ((t (:inherit outline-3 :height 1.15))))
         '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
 )
   )

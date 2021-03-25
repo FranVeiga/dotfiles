@@ -1,3 +1,4 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -72,7 +73,7 @@ plugins=(git archlinux autojump)
 [[ -s /home/user/.autojump/etc/profile.d/autojump.sh  ]] && source /home/user/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
-                
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,9 +87,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+    export EDITOR='vim'
 else
-  export EDITOR='vim'
+    export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -98,7 +99,8 @@ fi
 export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar
 export GTK_THEME=gtk-master
 export GITHUB="https://github.com/FranVeiga/"
-export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+#export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # Set Vim mode
 bindkey -v

@@ -55,15 +55,11 @@ let g:tokyonight_transparent_background = 1
 colorscheme tokyonight
 nnoremap <C-b> :let g:tokyonight_transparent_background = 0<CR>:colorscheme tokyonight<CR>
 
-" Snippets
-inoremap ,h1 <h1></h1><ESC>T>i
-inoremap ,p <p></p><ESC>T>i
-inoremap ,li <p></p><ESC>T>i
-
-
 map  <C-s> :w<CR>
 imap  <C-s> :w<CR>
 imap kk <ESC>
+nnoremap j gj
+nnoremap k gk
 
 " use ,t on insert mode to insert a tag (doesn't work on normal mode)
 function! InsertTag(tag)
