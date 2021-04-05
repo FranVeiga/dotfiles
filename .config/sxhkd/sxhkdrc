@@ -8,7 +8,7 @@ super + {shift,control} + Return
 
 # program launcher
 super + p
-	rofi -modi drun -show drun
+	rofi -modi drun -show drun -theme $HOME/.config/polybar/cuts/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -168,7 +168,7 @@ super + shift + y
 super + shift + s
     ~/scripts/dmenu_qtile_shutdown
     
-
+# Select keyboard layout
 
 
 # Browser
