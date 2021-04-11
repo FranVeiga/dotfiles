@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + {shift,control} + Return
-	{alacritty,alacritty --class Float}
+	{termite,termite --class Float}
 
 # program launcher
 super + p
@@ -141,15 +141,12 @@ super + {Left,Down,Up,Right}
 XF86Audio{Play,Next,Prev}
     playerctl {play-pause,next,previous}
 
-XF86Audio{Play,Next,Prev}
-    mocp {-G,-f,-p} &
-
 XF86MonBrightness{Up,Down}
-    xbacklight {-inc,-dec} 10
+    light {-A,-U} 10
 
 # alternative keybinds for brightness
 super + shift + {x,z}
-    xbacklight {-inc,-dec} 10
+    light {-A,-U} 10
 
 # screenshot tool
 Print
@@ -170,14 +167,17 @@ super + shift + s
     
 # Select keyboard layout
 
+# Select current desktop icon
+super + shift + n
+    $HOME/scripts/rofi-desk-selector
 
 # Browser
 super + {_,shift +}u
-    {vivaldi-snapshot,qutebrowser}
+    {vivaldi-stable,qutebrowser}
 
 # File browser
 super + e
-    alacritty -e ranger
+    termite -e ranger
 
 # Email client
 super + shift + e
@@ -185,26 +185,26 @@ super + shift + e
 
 # Volume control
 super + {_,shift +}a
-    {alacritty --class pulsemixer -e pulsemixer,pavucontrol}
+    {termite --class pulsemixer -e pulsemixer,pavucontrol}
 
 # Task manager
 super + {shift,control} + p
-    alacritty {--class htop -e htop, -e htop}
+    termite {--class htop -e htop, -e htop}
 
 
 
 ## Program keybinds
 super + {_,shift +}KP_Home
-    {alacritty --class ncspot -e ncspot,spotify}
+    {termite --class ncspot -e ncspot,spotify}
 
 super + {_,shift +}KP_Up
-    {alacritty --class castero -e castero,fluentreader}
+    {termite --class castero -e castero,fluentreader}
 
 super + {_,shift +}KP_Prior
-    {blueman-manager,virt-manager}
+    {blueberry,virt-manager}
 
 super + {_,shift +}KP_Left
-    {minecraft,steam}
+    {/home/franveiga/.games/minecraft,steam}
 
 super + {_,shift +}KP_Begin
     {emacs,bleachbit}
@@ -216,7 +216,7 @@ super + {_,shift +}KP_End
     {gimp,libreoffice}
 
 super + {_,shift +}KP_Down
-    {kdenlive,alacritty -e epr}
+    {kdenlive,termite -e epr}
 
 super + {_,shift +}KP_Next
     {freetube-bin,krita}

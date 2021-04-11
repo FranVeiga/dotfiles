@@ -68,7 +68,7 @@ ZSH_THEME="tjkirch"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux autojump)
+plugins=(git autojump archlinux)
 
 [[ -s /home/user/.autojump/etc/profile.d/autojump.sh  ]] && source /home/user/.autojump/etc/profile.d/autojump.sh
 
@@ -100,7 +100,7 @@ export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga
 export GTK_THEME=gtk-master
 export GITHUB="https://github.com/FranVeiga/"
 #export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="nvim -c 'set ft=man || NERDTreeToggle' -"
 
 # Set Vim mode
 bindkey -v

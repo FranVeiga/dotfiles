@@ -3,9 +3,9 @@ bspc -r "*"
 
 ### AUTOSTART
 
-picom -b &
+picom --experimental-backend &
 nitrogen --restore
-lxpolkit &
+/usr/lib/lxpolkit/lxpolkit &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	 
@@ -23,8 +23,8 @@ $HOME/.config/polybar/$theme/launch.sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII
-# bspc monitor -d           
+# bspc monitor -d I II III IV V VI VII VIII
+bspc monitor -d         
 
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
@@ -35,8 +35,8 @@ bspc config window_gap                    4
 
 if [ $theme = "cuts" ]
 then
-    bspc config top_padding               24
-    bspc config bottom_padding            24
+    bspc config top_padding               28
+    bspc config bottom_padding            28
 else
     bspc config top_padding               0
     bspc config bottom_padding            0
@@ -61,7 +61,6 @@ bspc config pointer_action3 resize_corner
 
 # WS I and VI monocle by default
 bspc desktop I -l next
-bspc desktop III -l next
 
 # RULES
 
@@ -88,9 +87,10 @@ bspc rule -a *:lxpolkit state=floating
 bspc rule -a *:*:'Picture in picture' state=floating
 bspc rule -a *:Steam state=floating
 bspc rule -a *:pavucontrol state=floating
-bspc rule -a *:pulsemixer state=floating rectangle=500x250+440+275 sticky=on
-bspc rule -a *:htop state=floating rectangle=900x600+233+75 sticky=on
+bspc rule -a *:*:pulsemixer state=floating rectangle=500x250+440+275 sticky=on
+bspc rule -a *:*:htop state=floating rectangle=900x600+233+75 sticky=on
 bspc rule -a *:Float state=floating
+bspc rule -a *:*:Float state=floating
 bspc rule -a *:emacs state=tiled
 
 
@@ -100,7 +100,7 @@ bspc rule -a *:emacs state=tiled
 # Browsers
 bspc rule -a *:Navigator desktop='^1' follow=on
 bspc rule -a *:qutebrowser desktop='^1' follow=on
-bspc rule -a *:vivaldi-snapshot desktop='^1' follow=on
+bspc rule -a *:vivaldi-stable desktop='^1' follow=on
 bspc rule -a *:brave-browser desktop='^1' follow=on
 bspc rule -a *:chromium desktop='^1' follow=on
 

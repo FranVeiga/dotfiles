@@ -1,6 +1,108 @@
-volume = 36060
-shuffle = false
+volume = 55710
+shuffle = true
 repeat = 'track'
+
+[[queue]]
+type = 'Track'
+id = '469PWexSSwOrr9bvJOGuC2'
+uri = 'spotify:track:469PWexSSwOrr9bvJOGuC2'
+title = 'Soda'
+track_number = 1
+disc_number = 1
+duration = 181712
+artists = ['El Kuelgue']
+artist_ids = ['6jRUKVZllu1wtgXHbqvUmT']
+album = 'Soda'
+album_id = '5lf2MG6VKadVQd9yi1Bs27'
+album_artists = ['El Kuelgue']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273447a9ad2e15f2e9ab8d953a1'
+url = 'spotify:track:469PWexSSwOrr9bvJOGuC2'
+added_at = '2021-04-04T16:10:18Z'
+list_index = 99
+
+[[queue]]
+type = 'Track'
+id = '7MAibcTli4IisCtbHKrGMh'
+uri = 'spotify:track:7MAibcTli4IisCtbHKrGMh'
+title = 'Leave The Door Open'
+track_number = 1
+disc_number = 1
+duration = 242096
+artists = [
+    'Bruno Mars',
+    'Anderson .Paak',
+    'Silk Sonic',
+]
+artist_ids = [
+    '0du5cEVh5yTK9QJze8zA0C',
+    '3jK9MiCrA42lLAdMGUZpwa',
+    '6PvvGcCY2XtUcSRld1Wilr',
+]
+album = 'Leave The Door Open'
+album_id = '7dfPqXck6BB9wpThrVYBss'
+album_artists = [
+    'Bruno Mars',
+    'Anderson .Paak',
+    'Silk Sonic',
+]
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2736f9e6abbd6fa43ac3cdbeee0'
+url = 'spotify:track:7MAibcTli4IisCtbHKrGMh'
+added_at = '2021-03-25T12:25:50Z'
+list_index = 98
+
+[[queue]]
+type = 'Track'
+id = '6tDDoYIxWvMLTdKpjFkc1B'
+uri = 'spotify:track:6tDDoYIxWvMLTdKpjFkc1B'
+title = 'telepatía'
+track_number = 7
+disc_number = 1
+duration = 160191
+artists = ['Kali Uchis']
+artist_ids = ['1U1el3k54VvEUzo3ybLPlM']
+album = 'Sin Miedo (del Amor y Otros Demonios) ∞'
+album_id = '00wSTrFxoSzA7eeS1UxHgd'
+album_artists = ['Kali Uchis']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273044a5466dac00f7b3c570b99'
+url = 'spotify:track:6tDDoYIxWvMLTdKpjFkc1B'
+added_at = '2021-03-25T12:24:49Z'
+list_index = 97
+
+[[queue]]
+type = 'Track'
+id = '5HeKOKc4phmLn8e4I7EkzD'
+uri = 'spotify:track:5HeKOKc4phmLn8e4I7EkzD'
+title = 'My Blood'
+track_number = 4
+disc_number = 1
+duration = 229120
+artists = ['Twenty One Pilots']
+artist_ids = ['3YQKmKGau1PzlVlkL1iodx']
+album = 'Trench'
+album_id = '621cXqrTSSJi1WqDMSLmbL'
+album_artists = ['Twenty One Pilots']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273768828c6867cd0472fc84e4d'
+url = 'spotify:track:5HeKOKc4phmLn8e4I7EkzD'
+added_at = '2021-03-23T20:41:01Z'
+list_index = 96
+
+[[queue]]
+type = 'Track'
+id = '7iaQV6plfQRead7XdleWM4'
+uri = 'spotify:track:7iaQV6plfQRead7XdleWM4'
+title = 'Aftermath'
+track_number = 4
+disc_number = 1
+duration = 185869
+artists = ['Caravan Palace']
+artist_ids = ['37J1PlAkhRK7yrZUtqaUpQ']
+album = '<I°_°I>'
+album_id = '0ccLlfjzuzpoJerJVsTAmS'
+album_artists = ['Caravan Palace']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273ad46d68a05aba0576c1a0fcc'
+url = 'spotify:track:7iaQV6plfQRead7XdleWM4'
+added_at = '2021-03-23T10:42:00Z'
+list_index = 95
 
 [[queue]]
 type = 'Track'
@@ -18,7 +120,7 @@ album_artists = ['Imagine Dragons']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27325e1a02097987b3480c7a8c5'
 url = 'spotify:track:7FdUvDkaE24o3FPIWTvzv2'
 added_at = '2021-03-22T14:33:33Z'
-list_index = 95
+list_index = 94
 
 [[queue]]
 type = 'Track'
@@ -36,7 +138,7 @@ album_artists = ['The Weeknd']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36'
 url = 'spotify:track:5QO79kh1waicV47BqGRL3g'
 added_at = '2021-03-22T14:20:26Z'
-list_index = 94
+list_index = 93
 
 [[queue]]
 type = 'Track'
@@ -66,7 +168,7 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2737e4b101046479cd4568a3cbc'
 url = 'spotify:track:5YYW3yRktprLRr47WK219Y'
 added_at = '2021-03-18T12:10:12Z'
-list_index = 93
+list_index = 92
 
 [[queue]]
 type = 'Track'
@@ -84,7 +186,7 @@ album_artists = ['Rex Orange County']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27315f4cfd072793fa7532e674a'
 url = 'spotify:track:4EpZ4eYuZOwPSSwyqpdHnJ'
 added_at = '2021-03-17T19:05:12Z'
-list_index = 92
+list_index = 91
 
 [[queue]]
 type = 'Track'
@@ -102,7 +204,7 @@ album_artists = ['Rex Orange County']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27333a6b45fa8354efe37633964'
 url = 'spotify:track:47Bg6IrMed1GPbxRgwH2aC'
 added_at = '2021-03-17T19:04:37Z'
-list_index = 91
+list_index = 90
 
 [[queue]]
 type = 'Track'
@@ -120,7 +222,7 @@ album_artists = ['Nena']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2730a043c8c45330aa972c46339'
 url = 'spotify:track:4ZhPLoMzZwewHLLjV1J15c'
 added_at = '2021-03-16T00:29:28Z'
-list_index = 90
+list_index = 89
 
 [[queue]]
 type = 'Track'
@@ -138,7 +240,7 @@ album_artists = ['Agapornis']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2738391325a64ec33fc2fdc40db'
 url = 'spotify:track:2h4XmZGEUqqiJedUBrQjxK'
 added_at = '2021-03-11T01:31:20Z'
-list_index = 89
+list_index = 88
 
 [[queue]]
 type = 'Track'
@@ -156,7 +258,7 @@ album_artists = ['Aretha Franklin']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27346c31f64babcbfca6e061b6b'
 url = 'spotify:track:3NfxSdJnVdon1axzloJgba'
 added_at = '2021-03-08T15:20:22Z'
-list_index = 88
+list_index = 87
 
 [[queue]]
 type = 'Track'
@@ -174,7 +276,7 @@ album_artists = ['Anderson .Paak']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273f8e77075414234fd77fce32b'
 url = 'spotify:track:25GlFJq5QNAXyVgJvCZ4Mf'
 added_at = '2021-03-08T02:33:23Z'
-list_index = 87
+list_index = 86
 
 [[queue]]
 type = 'Track'
@@ -192,7 +294,7 @@ album_artists = ['Tears For Fears']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273cda963878b34b80c742d11bb'
 url = 'spotify:track:0PbAyLrJRDxckQBLQ2Addc'
 added_at = '2021-03-04T15:26:20Z'
-list_index = 86
+list_index = 85
 
 [[queue]]
 type = 'Track'
@@ -210,7 +312,7 @@ album_artists = ['Babi']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2734a31eebdd8f5114ac7c74d23'
 url = 'spotify:track:4QsPA1lAuco7MSCHbCfGqu'
 added_at = '2021-03-02T02:07:45Z'
-list_index = 85
+list_index = 84
 
 [[queue]]
 type = 'Track'
@@ -228,7 +330,7 @@ album_artists = ['John Mayer']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27321f02a52720857a42bba5417'
 url = 'spotify:track:3bH4HzoZZFq8UpZmI2AMgV'
 added_at = '2021-02-27T02:09:23Z'
-list_index = 84
+list_index = 83
 
 [[queue]]
 type = 'Track'
@@ -246,7 +348,7 @@ album_artists = ['Keane']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2732ebd3c8519497dc562f8f9aa'
 url = 'spotify:track:3e90d7sOsXNnVyBfOhjo0z'
 added_at = '2021-02-24T23:04:53Z'
-list_index = 83
+list_index = 82
 
 [[queue]]
 type = 'Track'
@@ -264,7 +366,7 @@ album_artists = ['The Kid LAROI']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273df16d539f508603bfb1efe02'
 url = 'spotify:track:27OeeYzk6klgBh83TSvGMA'
 added_at = '2021-02-15T01:08:14Z'
-list_index = 82
+list_index = 81
 
 [[queue]]
 type = 'Track'
@@ -282,7 +384,7 @@ album_artists = ['El Kuelgue']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27331003eda8990bdff566e7c69'
 url = 'spotify:track:2ehpGberBRsvdOfHW6hiti'
 added_at = '2021-02-09T19:34:36Z'
-list_index = 81
+list_index = 80
 
 [[queue]]
 type = 'Track'
@@ -312,7 +414,7 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273d75f68e22537a0883d72f01b'
 url = 'spotify:track:1mjHyr9e7uP0QisX3y7a6T'
 added_at = '2021-02-03T21:41:30Z'
-list_index = 80
+list_index = 79
 
 [[queue]]
 type = 'Track'
@@ -330,7 +432,7 @@ album_artists = ['Luis Miguel']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273b1504069929fe0a81594eb33'
 url = 'spotify:track:0ULXIAoxSZBcOwygC3PA0i'
 added_at = '2021-02-03T01:04:38Z'
-list_index = 79
+list_index = 78
 
 [[queue]]
 type = 'Track'
@@ -354,7 +456,7 @@ album_artists = ['Anderson .Paak']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2733d5b8fe604275dfab677bd0d'
 url = 'spotify:track:4SBVWkRIMJ6WBCYPvr5Bwr'
 added_at = '2021-01-29T03:41:53Z'
-list_index = 78
+list_index = 77
 
 [[queue]]
 type = 'Track'
@@ -372,7 +474,7 @@ album_artists = ['Anderson .Paak']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273d3af16078e9a78edac2ebed8'
 url = 'spotify:track:2IFFKj9orAsQOOS0JRhHAW'
 added_at = '2021-01-29T03:35:55Z'
-list_index = 77
+list_index = 76
 
 [[queue]]
 type = 'Track'
@@ -399,7 +501,7 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273d154987b7cde827edd705958'
 url = 'spotify:track:4X68evfkVEhjrevue7OsRM'
 added_at = '2021-01-21T02:38:07Z'
-list_index = 76
+list_index = 75
 
 [[queue]]
 type = 'Track'
@@ -417,7 +519,7 @@ album_artists = ['Ratones Paranoicos']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2737d032e1ed6d0bc6ed155cc27'
 url = 'spotify:track:3QyB8F5ZhYoai6qjC3evt4'
 added_at = '2021-01-15T01:40:38Z'
-list_index = 75
+list_index = 74
 
 [[queue]]
 type = 'Track'
@@ -435,7 +537,7 @@ album_artists = ['Conociendo Rusia']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27369c242cfabc71f943cc9adcd'
 url = 'spotify:track:392fECmnYZTQjL97hqEElg'
 added_at = '2021-01-06T00:10:41Z'
-list_index = 74
+list_index = 73
 
 [[queue]]
 type = 'Track'
@@ -453,7 +555,7 @@ album_artists = ['Walter Malosetti']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27388bee6c21c2c396612e04a62'
 url = 'spotify:track:4KL3VTE99YiRXtnfCouTWD'
 added_at = '2021-01-05T02:32:23Z'
-list_index = 73
+list_index = 72
 
 [[queue]]
 type = 'Track'
@@ -471,7 +573,7 @@ album_artists = ['Cage The Elephant']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27372b478dedd009d6b8d6e7971'
 url = 'spotify:track:5DxEW4Mgz7SIPrdy1EKrA3'
 added_at = '2020-12-31T20:14:35Z'
-list_index = 72
+list_index = 71
 
 [[queue]]
 type = 'Track'
@@ -489,7 +591,7 @@ album_artists = ['Luis Alberto Spinetta']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273a1433832dffafcb82ad46936'
 url = 'spotify:track:1y96w7WDPlwByq9aISEi6G'
 added_at = '2020-12-30T21:07:28Z'
-list_index = 71
+list_index = 70
 
 [[queue]]
 type = 'Track'
@@ -507,7 +609,7 @@ album_artists = ['Coldplay']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0'
 url = 'spotify:track:2QhURnm7mQDxBb5jWkbDug'
 added_at = '2020-12-30T20:35:42Z'
-list_index = 70
+list_index = 69
 
 [[queue]]
 type = 'Track'
@@ -525,7 +627,7 @@ album_artists = ['Coldplay']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0'
 url = 'spotify:track:0qksx8mV28lztYIZ1om8ml'
 added_at = '2020-12-30T20:35:31Z'
-list_index = 69
+list_index = 68
 
 [[queue]]
 type = 'Track'
@@ -543,7 +645,7 @@ album_artists = ['Coldplay']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27390afd8e4ec6d787114ed6c40'
 url = 'spotify:track:75JFxkI2RXiU7L9VXzMkle'
 added_at = '2020-12-30T20:31:36Z'
-list_index = 68
+list_index = 67
 
 [[queue]]
 type = 'Track'
@@ -561,7 +663,7 @@ album_artists = ['Quinn XCII']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b273e8bc169bb4ed36fd76e72c24'
 url = 'spotify:track:4RtexJZ1OyRkDNlqVUt8Zt'
 added_at = '2020-12-30T20:18:12Z'
-list_index = 67
+list_index = 66
 
 [[queue]]
 type = 'Track'
@@ -579,7 +681,7 @@ album_artists = ['SALES']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2730b6cf09d061f569dd906e490'
 url = 'spotify:track:5MeUMSRreLHYLhw8ZTyqpk'
 added_at = '2020-12-30T05:29:54Z'
-list_index = 66
+list_index = 65
 
 [[queue]]
 type = 'Track'
@@ -597,25 +699,25 @@ album_artists = ['Ruben Rada']
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2735e2ed465e36e57e2a6d135d0'
 url = 'spotify:track:0h0xy0Lu53vn8JFalDktw6'
 added_at = '2020-12-28T17:39:57Z'
-list_index = 65
+list_index = 64
 
 [[queue]]
 type = 'Track'
-id = '7hQHvBW5TllV3XAr3m4G0C'
-uri = 'spotify:track:7hQHvBW5TllV3XAr3m4G0C'
-title = '''Ain't No Rest for the Wicked'''
+id = '7tCHpjktA50ihtkLz6bAnn'
+uri = 'spotify:track:7tCHpjktA50ihtkLz6bAnn'
+title = '''Ain't No Rest For The Wicked - Original Version'''
 track_number = 3
-disc_number = 2
-duration = 177333
+disc_number = 1
+duration = 175493
 artists = ['Cage The Elephant']
 artist_ids = ['26T3LtbuGT1Fu9m0eRq5X3']
-album = 'Massive Hits!: Alternative'
-album_id = '455KOzJtdS5koBEib2ICqA'
-album_artists = ['Various Artists']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b2735ca36f27796a187b539d0682'
-url = 'spotify:track:7hQHvBW5TllV3XAr3m4G0C'
+album = 'Cage The Elephant'
+album_id = '0c1yNi1MuGlcNrCzU2kDVE'
+album_artists = ['Cage The Elephant']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273ce6b979ca98da4c27157dc17'
+url = 'spotify:track:7tCHpjktA50ihtkLz6bAnn'
 added_at = '2020-12-26T20:08:27Z'
-list_index = 64
+list_index = 63
 
 [[queue]]
 type = 'Track'
@@ -642,7 +744,7 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27325bb46ea2a1dcf91898f6622'
 url = 'spotify:track:3B30FE1ywQwRa5vcg2W1Zg'
 added_at = '2020-12-24T14:16:37Z'
-list_index = 63
+list_index = 62
 
 [[queue]]
 type = 'Track'
@@ -669,7 +771,7 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27320352efec5fe2a624b3ac8a6'
 url = 'spotify:track:5ZoYsrmeVPyJI4rhdBBJi1'
 added_at = '2020-12-24T14:10:14Z'
-list_index = 62
+list_index = 61
 
 [[queue]]
 type = 'Track'
@@ -696,24 +798,6 @@ album_artists = [
 cover_url = 'https://i.scdn.co/image/ab67616d0000b2730c8d958dbd51458368aa7e12'
 url = 'spotify:track:2PKb7tFxkwMoS7Y6muOTAR'
 added_at = '2020-12-24T14:09:56Z'
-list_index = 61
-
-[[queue]]
-type = 'Track'
-id = '469PWexSSwOrr9bvJOGuC2'
-uri = 'spotify:track:469PWexSSwOrr9bvJOGuC2'
-title = 'Soda'
-track_number = 1
-disc_number = 1
-duration = 181712
-artists = ['El Kuelgue']
-artist_ids = ['6jRUKVZllu1wtgXHbqvUmT']
-album = 'Soda'
-album_id = '5lf2MG6VKadVQd9yi1Bs27'
-album_artists = ['El Kuelgue']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b273447a9ad2e15f2e9ab8d953a1'
-url = 'spotify:track:469PWexSSwOrr9bvJOGuC2'
-added_at = '2020-12-23T04:34:17Z'
 list_index = 60
 
 [[queue]]
@@ -1742,7 +1826,7 @@ artist_ids = ['1a1v0OJC5GqtsLwzoqJm7j']
 album = 'Usted Señalemelo'
 album_id = '6ZSWmVkucGkNzqWZYGMGMK'
 album_artists = ['Usted Señalemelo']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b273025cd33080425b1bec29c6b3'
+cover_url = 'https://i.scdn.co/image/ab67616d0000b27346a0058d468910153d6382c4'
 url = 'spotify:track:6mYdnKt43uGw3gmtOz4yQi'
 added_at = '2020-07-08T17:20:11Z'
 list_index = 9
@@ -2532,8 +2616,8 @@ list_index = 68
 
 [[queue]]
 type = 'Track'
-id = '7MTSjR6qz771m55GNvhAYb'
-uri = 'spotify:track:7MTSjR6qz771m55GNvhAYb'
+id = '3MUHmvH295bOWebSFQmF48'
+uri = 'spotify:track:3MUHmvH295bOWebSFQmF48'
 title = 'Cartoons and Vodka'
 track_number = 3
 disc_number = 1
@@ -2541,10 +2625,10 @@ duration = 218293
 artists = ['Jinkx Monsoon']
 artist_ids = ['6rYhtNKtoVz8SxSylWyUeR']
 album = 'The Ginger Snapped'
-album_id = '2XcesRwrPKracQpIzUZOzG'
+album_id = '4aMkBzsCeiSHMyvso9G40f'
 album_artists = ['Jinkx Monsoon']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b2730ec524374c729d616b501023'
-url = 'spotify:track:7MTSjR6qz771m55GNvhAYb'
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2736004a044c3c85a9aaad67816'
+url = 'spotify:track:3MUHmvH295bOWebSFQmF48'
 added_at = '2020-04-06T23:18:31Z'
 list_index = 67
 
@@ -8806,16 +8890,21 @@ duration = 214615
 artists = [
     'Bhavi',
     'Seven Kayne',
+    'Halpe',
+    'Omar Varela',
 ]
 artist_ids = [
     '7fT2Me47PQ8T7954PKrcwR',
     '4C29ETLBPmYKYwtJUepbJz',
+    '5fUaIEaRhzIad7C49MqTsy',
+    '5xIOUIBQhGFX7HIj8lhdyU',
 ]
 album = 'Bésame'
 album_id = '7BgcHmgYP3sp0AAYLKyc0s'
 album_artists = [
     'Bhavi',
     'Seven Kayne',
+    'Halpe',
 ]
 cover_url = 'https://i.scdn.co/image/ab67616d0000b27358d77ea0c083469eaeae5de8'
 url = 'spotify:track:1thzPqoQxXhh6YHhANIFnj'
@@ -10164,19 +10253,19 @@ list_index = 0
 
 [[queue]]
 type = 'Track'
-id = '1h2xVEoJORqrg71HocgqXd'
-uri = 'spotify:track:1h2xVEoJORqrg71HocgqXd'
-title = 'Superstition - Single Version'
-track_number = 9
+id = '4N0TP4Rmj6QQezWV88ARNJ'
+uri = 'spotify:track:4N0TP4Rmj6QQezWV88ARNJ'
+title = 'Superstition'
+track_number = 6
 disc_number = 1
-duration = 245493
+duration = 266133
 artists = ['Stevie Wonder']
 artist_ids = ['7guDJrEfX3qb6FEbdPA5qi']
-album = 'The Definitive Collection'
-album_id = '4E1itnJOhTMRSATNaxh0Sq'
+album = 'Talking Book'
+album_id = '3PResMqFgQYBfzTnqTKwQw'
 album_artists = ['Stevie Wonder']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b2739e447b59bd3e2cbefaa31d91'
-url = 'spotify:track:1h2xVEoJORqrg71HocgqXd'
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273a14b08b9a6616e121df5e8b0'
+url = 'spotify:track:4N0TP4Rmj6QQezWV88ARNJ'
 added_at = '2018-01-19T04:54:30Z'
 list_index = 99
 
@@ -14386,25 +14475,777 @@ list_index = 0
 
 [[queue]]
 type = 'Track'
-id = '5QO79kh1waicV47BqGRL3g'
-uri = 'spotify:track:5QO79kh1waicV47BqGRL3g'
-title = 'Save Your Tears'
+id = '2cebuDRXBsi89lb1Jz3TFs'
+uri = 'spotify:track:2cebuDRXBsi89lb1Jz3TFs'
+title = 'Cambalache (with Leopoldo Federico y Su Orquesta)'
+track_number = 9
+disc_number = 1
+duration = 184026
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'El Firulete'
+album_id = '3Gs3IScxQIDPlkUK2QibPV'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273246fe4577dcd3ed0b6104379'
+url = 'spotify:track:2cebuDRXBsi89lb1Jz3TFs'
+added_at = '2017-02-20T00:38:31Z'
+list_index = 0
+
+[[queue]]
+type = 'Track'
+id = '5DFu0GqSovikRsz9TjV4E0'
+uri = 'spotify:track:5DFu0GqSovikRsz9TjV4E0'
+title = 'Que Me Van a Hablar de Amor (with Leopoldo Federico y Su Orquesta)'
+track_number = 5
+disc_number = 1
+duration = 193960
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'Cantor de Pueblo: Julio Sosa'
+album_id = '0kpAyV9cID64Se55OnxM0o'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2731bb89e03af9267bc2d634a17'
+url = 'spotify:track:5DFu0GqSovikRsz9TjV4E0'
+added_at = '2017-02-20T00:38:47Z'
+list_index = 1
+
+[[queue]]
+type = 'Track'
+id = '6s1RoEl971BJJWmM7HIesv'
+uri = 'spotify:track:6s1RoEl971BJJWmM7HIesv'
+title = 'Mano a Mano (with Leopoldo Federico y Su Orquesta)'
+track_number = 14
+disc_number = 1
+duration = 192200
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = '14 de Colección'
+album_id = '0NfcUyvLA6lw85S9lhf16n'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273ab2ac4e685cf852212fb4135'
+url = 'spotify:track:6s1RoEl971BJJWmM7HIesv'
+added_at = '2017-02-20T00:38:54Z'
+list_index = 2
+
+[[queue]]
+type = 'Track'
+id = '0c19zOgwp0OFKv7tlNYebl'
+uri = 'spotify:track:0c19zOgwp0OFKv7tlNYebl'
+title = 'El Ultimo Café (with Leopoldo Federico y Su Orquesta)'
+track_number = 4
+disc_number = 1
+duration = 185626
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'El Firulete'
+album_id = '3Gs3IScxQIDPlkUK2QibPV'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273246fe4577dcd3ed0b6104379'
+url = 'spotify:track:0c19zOgwp0OFKv7tlNYebl'
+added_at = '2017-02-20T00:39:05Z'
+list_index = 3
+
+[[queue]]
+type = 'Track'
+id = '5Rd588cbZ8HUooyMEhcJVC'
+uri = 'spotify:track:5Rd588cbZ8HUooyMEhcJVC'
+title = 'La Cumparsita (with Leopoldo Federico y Su Orquesta)'
+track_number = 12
+disc_number = 1
+duration = 183426
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'El Varón del Tango'
+album_id = '2XvsN6lJUVFH1jiqOMDEdU'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2735a587244f563b066a1e1e944'
+url = 'spotify:track:5Rd588cbZ8HUooyMEhcJVC'
+added_at = '2017-02-20T00:39:14Z'
+list_index = 4
+
+[[queue]]
+type = 'Track'
+id = '4N3biPDGVL1rdO54E6bDP5'
+uri = 'spotify:track:4N3biPDGVL1rdO54E6bDP5'
+title = 'Por una cabeza'
+track_number = 4
+disc_number = 1
+duration = 197320
+artists = ['Malevo']
+artist_ids = ['0wdejPdeJ2krfN1wnIR11L']
+album = 'Bajo Fondo Style – Tango Electronico'
+album_id = '7sgqkLISBfGBeLeKtYfbdb'
+album_artists = ['Malevo']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d3e7b202db7c6698c4731498'
+url = 'spotify:track:4N3biPDGVL1rdO54E6bDP5'
+added_at = '2017-02-20T00:39:50Z'
+list_index = 5
+
+[[queue]]
+type = 'Track'
+id = '57XjV08MLmm2WPnz6q3n5H'
+uri = 'spotify:track:57XjV08MLmm2WPnz6q3n5H'
+title = 'Se dice de mi'
+track_number = 7
+disc_number = 1
+duration = 138706
+artists = ['Malevo']
+artist_ids = ['0wdejPdeJ2krfN1wnIR11L']
+album = 'Bajo Fondo Style – Tango Electronico'
+album_id = '7sgqkLISBfGBeLeKtYfbdb'
+album_artists = ['Malevo']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d3e7b202db7c6698c4731498'
+url = 'spotify:track:57XjV08MLmm2WPnz6q3n5H'
+added_at = '2017-02-20T00:42:20Z'
+list_index = 6
+
+[[queue]]
+type = 'Track'
+id = '2Pv7a32fxLU9NnN0px47kA'
+uri = 'spotify:track:2Pv7a32fxLU9NnN0px47kA'
+title = 'House tango'
+track_number = 3
+disc_number = 1
+duration = 253066
+artists = ['Malevo']
+artist_ids = ['0wdejPdeJ2krfN1wnIR11L']
+album = 'Bajo Fondo Style – Tango Electronico'
+album_id = '7sgqkLISBfGBeLeKtYfbdb'
+album_artists = ['Malevo']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d3e7b202db7c6698c4731498'
+url = 'spotify:track:2Pv7a32fxLU9NnN0px47kA'
+added_at = '2017-02-20T00:43:42Z'
+list_index = 7
+
+[[queue]]
+type = 'Track'
+id = '6Gk1AODxdGNiF44NVlWY5G'
+uri = 'spotify:track:6Gk1AODxdGNiF44NVlWY5G'
+title = 'Si pudiera ver'
+track_number = 2
+disc_number = 1
+duration = 228133
+artists = ['Malevo']
+artist_ids = ['0wdejPdeJ2krfN1wnIR11L']
+album = 'Bajo Fondo Style – Tango Electronico'
+album_id = '7sgqkLISBfGBeLeKtYfbdb'
+album_artists = ['Malevo']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d3e7b202db7c6698c4731498'
+url = 'spotify:track:6Gk1AODxdGNiF44NVlWY5G'
+added_at = '2017-02-20T00:44:17Z'
+list_index = 8
+
+[[queue]]
+type = 'Track'
+id = '6JqRmKXzT6v4a1NTbCu7bH'
+uri = 'spotify:track:6JqRmKXzT6v4a1NTbCu7bH'
+title = 'Café la Humedad'
+track_number = 12
+disc_number = 1
+duration = 228000
+artists = ['Cacho Castaña']
+artist_ids = ['3lwRbCTt1qmo0QgXUai8ao']
+album = 'Deluxe'
+album_id = '2vefLYqWsY6nbmzB7QTeba'
+album_artists = ['Cacho Castaña']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2733695b7390d069e70bbf6137c'
+url = 'spotify:track:6JqRmKXzT6v4a1NTbCu7bH'
+added_at = '2017-02-20T00:46:21Z'
+list_index = 9
+
+[[queue]]
+type = 'Track'
+id = '7FZeb3WUrCInAITFu9ZLJ8'
+uri = 'spotify:track:7FZeb3WUrCInAITFu9ZLJ8'
+title = 'Por una Cabeza (From "Parfum de femme")'
 track_number = 11
 disc_number = 1
-duration = 215626
-artists = ['The Weeknd']
-artist_ids = ['1Xyo4u8uXC1ZmMpatF05PJ']
-album = 'After Hours'
-album_id = '4yP0hdKOZPNshxUOjY0cZj'
-album_artists = ['The Weeknd']
-cover_url = 'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36'
-url = 'spotify:track:5QO79kh1waicV47BqGRL3g'
-added_at = '2021-03-22T14:20:26Z'
-list_index = 94
-[playlist_orders.7A4mTHI9ExPiRnK8TW1ci5]
+duration = 232965
+artists = [
+    'Gerardo Matos Rodriguez',
+    'Carlos Gardel',
+    'Angèle Dubeau',
+    'La Pietà',
+]
+artist_ids = [
+    '5DeRKZrVXp7WP1Y440UwLc',
+    '05Q9xndTxhXhD5trpmTtfU',
+    '3aKoUd44IrrqOa6Rzn9Ybq',
+    '3ZiiIxwcdE60xHzCQ35ewj',
+]
+album = 'A Time for Us (Silence, on joue!)'
+album_id = '5xVJfEh063VItO9sNxWv8Y'
+album_artists = [
+    'Angèle Dubeau',
+    'La Pietà',
+]
+cover_url = 'https://i.scdn.co/image/ab67616d0000b27365f15b2a958473d28c12662b'
+url = 'spotify:track:7FZeb3WUrCInAITFu9ZLJ8'
+added_at = '2017-02-20T00:48:44Z'
+list_index = 10
+
+[[queue]]
+type = 'Track'
+id = '5T9xdLt54vDIPCBCtrK358'
+uri = 'spotify:track:5T9xdLt54vDIPCBCtrK358'
+title = 'Volver'
+track_number = 1
+disc_number = 1
+duration = 170533
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Celebridades'
+album_id = '5MOLEFcj4EcAda6ob8fUUL'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273639389220908e25a9d18d80f'
+url = 'spotify:track:5T9xdLt54vDIPCBCtrK358'
+added_at = '2017-02-20T00:50:31Z'
+list_index = 11
+
+[[queue]]
+type = 'Track'
+id = '0mAPRz8lp5UsaPL00JN8zZ'
+uri = 'spotify:track:0mAPRz8lp5UsaPL00JN8zZ'
+title = 'El Día Que Me Quieras'
+track_number = 1
+disc_number = 1
+duration = 201932
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Tango Collection'
+album_id = '5bgVQCCCdPlaRxhHjcEAja'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273998236acce6f63d719c64145'
+url = 'spotify:track:0mAPRz8lp5UsaPL00JN8zZ'
+added_at = '2017-02-20T00:55:02Z'
+list_index = 12
+
+[[queue]]
+type = 'Track'
+id = '1PxExSgTnMITJHwnDqDy2E'
+uri = 'spotify:track:1PxExSgTnMITJHwnDqDy2E'
+title = 'Mi Buenos Aires Querido'
+track_number = 3
+disc_number = 1
+duration = 154514
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Love Tango'
+album_id = '2Y8RbguEBKaRlkh86bGaAE'
+album_artists = ['Various Artists']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b27353863f0e04e70e06e6dda667'
+url = 'spotify:track:1PxExSgTnMITJHwnDqDy2E'
+added_at = '2017-02-20T00:56:42Z'
+list_index = 13
+
+[[queue]]
+type = 'Track'
+id = '1VsXptpRgsoR6EDRgX5MWt'
+uri = 'spotify:track:1VsXptpRgsoR6EDRgX5MWt'
+title = 'Por Una Cabeza'
+track_number = 7
+disc_number = 1
+duration = 178166
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Love Tango'
+album_id = '2Y8RbguEBKaRlkh86bGaAE'
+album_artists = ['Various Artists']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b27353863f0e04e70e06e6dda667'
+url = 'spotify:track:1VsXptpRgsoR6EDRgX5MWt'
+added_at = '2017-02-20T00:57:25Z'
+list_index = 14
+
+[[queue]]
+type = 'Track'
+id = '3mGkPsZbHEBf8ZT1ExZnww'
+uri = 'spotify:track:3mGkPsZbHEBf8ZT1ExZnww'
+title = 'Scent of a Woman: Tango (Por Una Cabeza)'
+track_number = 2
+disc_number = 1
+duration = 231160
+artists = [
+    'Carlos Gardel',
+    'Itzhak Perlman',
+    'John Williams',
+    'Pittsburgh Symphony Orchestra',
+]
+artist_ids = [
+    '05Q9xndTxhXhD5trpmTtfU',
+    '0hIG9FXgjQxT8fKaYceFbA',
+    '3dRfiJ2650SZu6GbydcHNb',
+    '7oOCHAPJjD7IARb5hrzvw9',
+]
+album = 'Cinema Serenade'
+album_id = '7fYlJ1HNLfs6JIvJCJ2rqq'
+album_artists = [
+    'Itzhak Perlman',
+    'John Williams',
+]
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2730267c7c4063b992b1f7ae1ca'
+url = 'spotify:track:3mGkPsZbHEBf8ZT1ExZnww'
+added_at = '2017-02-20T00:58:19Z'
+list_index = 15
+
+[[queue]]
+type = 'Track'
+id = '7oazB2sKLoBDC49smTIdoj'
+uri = 'spotify:track:7oazB2sKLoBDC49smTIdoj'
+title = 'Adiós Muchachos'
+track_number = 14
+disc_number = 1
+duration = 148093
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Celebridades'
+album_id = '5MOLEFcj4EcAda6ob8fUUL'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273639389220908e25a9d18d80f'
+url = 'spotify:track:7oazB2sKLoBDC49smTIdoj'
+added_at = '2017-02-20T00:58:44Z'
+list_index = 16
+
+[[queue]]
+type = 'Track'
+id = '4PXMvngbWMoWlRtXvh7FTg'
+uri = 'spotify:track:4PXMvngbWMoWlRtXvh7FTg'
+title = 'Yira, Yira'
+track_number = 5
+disc_number = 1
+duration = 168013
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Celebridades'
+album_id = '5MOLEFcj4EcAda6ob8fUUL'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273639389220908e25a9d18d80f'
+url = 'spotify:track:4PXMvngbWMoWlRtXvh7FTg'
+added_at = '2017-02-20T00:59:09Z'
+list_index = 17
+
+[[queue]]
+type = 'Track'
+id = '4X5Hx5b8aJaKPsO4lRcVL8'
+uri = 'spotify:track:4X5Hx5b8aJaKPsO4lRcVL8'
+title = 'Caminito'
+track_number = 1
+disc_number = 1
+duration = 150060
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Caminito'
+album_id = '6w3rTDWiH8B3SfyCG2kOU9'
+album_artists = ['Carlos Gardel Y Sus Guitarras']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273013b8e9679d2b480b2e4bcef'
+url = 'spotify:track:4X5Hx5b8aJaKPsO4lRcVL8'
+added_at = '2017-02-20T01:00:40Z'
+list_index = 18
+
+[[queue]]
+type = 'Track'
+id = '0KPO36Nizq6shj1OF9QwgJ'
+uri = 'spotify:track:0KPO36Nizq6shj1OF9QwgJ'
+title = 'Rencor - Remastered'
+track_number = 1
+disc_number = 1
+duration = 188433
+artists = ['Julio Sosa']
+artist_ids = ['7Cg2eqV6oHNE0P54WfajIX']
+album = 'El varón del tango (Remastered)'
+album_id = '1w8HHmRLzmOcnXS3ByK72r'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273e83d3ba1284b8e980c107aa8'
+url = 'spotify:track:0KPO36Nizq6shj1OF9QwgJ'
+added_at = '2017-02-20T01:24:54Z'
+list_index = 19
+
+[[queue]]
+type = 'Track'
+id = '4aWjjLRcDA0uTeisuBDOIH'
+uri = 'spotify:track:4aWjjLRcDA0uTeisuBDOIH'
+title = 'En Esta Tarde Gris (with Leopoldo Federico y Su Orquesta)'
+track_number = 10
+disc_number = 1
+duration = 228413
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'Cantor de Pueblo: Julio Sosa'
+album_id = '0kpAyV9cID64Se55OnxM0o'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2731bb89e03af9267bc2d634a17'
+url = 'spotify:track:4aWjjLRcDA0uTeisuBDOIH'
+added_at = '2017-02-20T01:29:08Z'
+list_index = 20
+
+[[queue]]
+type = 'Track'
+id = '0HpRyogDQmGBSXDQV8hJRt'
+uri = 'spotify:track:0HpRyogDQmGBSXDQV8hJRt'
+title = 'Uno (with Armando Pontier y su Orquesta)'
+track_number = 1
+disc_number = 1
+duration = 172933
+artists = [
+    'Julio Sosa',
+    'Armando Pontier y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '7tP1XTTAQzgy6i9zFeq2EE',
+]
+album = '30 Aniversario 1964/1994'
+album_id = '1d4Wu5XF2hOKxvZyR08skh'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273e5ae16c77e6f4f5ac187dc44'
+url = 'spotify:track:0HpRyogDQmGBSXDQV8hJRt'
+added_at = '2017-02-20T01:31:05Z'
+list_index = 21
+
+[[queue]]
+type = 'Track'
+id = '1jUTtkWKuZUPay75PBQadI'
+uri = 'spotify:track:1jUTtkWKuZUPay75PBQadI'
+title = 'El Firulete (with Leopoldo Federico y Su Orquesta)'
+track_number = 3
+disc_number = 1
+duration = 132586
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'El Firulete'
+album_id = '3Gs3IScxQIDPlkUK2QibPV'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273246fe4577dcd3ed0b6104379'
+url = 'spotify:track:1jUTtkWKuZUPay75PBQadI'
+added_at = '2017-02-20T01:31:19Z'
+list_index = 22
+
+[[queue]]
+type = 'Track'
+id = '56WodD5Vh48MMcMwLyn6GY'
+uri = 'spotify:track:56WodD5Vh48MMcMwLyn6GY'
+title = 'Margot (with Leopoldo Federico y Su Orquesta)'
+track_number = 2
+disc_number = 1
+duration = 181133
+artists = [
+    'Julio Sosa',
+    'Leopoldo Federico y su Orquesta',
+]
+artist_ids = [
+    '7Cg2eqV6oHNE0P54WfajIX',
+    '2QtuDqkuMbNQlmGgMbPBOA',
+]
+album = 'La Cumparsita'
+album_id = '2EfPrETVLkWCHrTUYXqCgc'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273c25725fc210ab74c890f5b85'
+url = 'spotify:track:56WodD5Vh48MMcMwLyn6GY'
+added_at = '2017-02-20T01:31:38Z'
+list_index = 23
+
+[[queue]]
+type = 'Track'
+id = '34YBorcCdFT0tGjOy5FD1Q'
+uri = 'spotify:track:34YBorcCdFT0tGjOy5FD1Q'
+title = 'Que me van a hablar de amor - Remastered'
+track_number = 9
+disc_number = 1
+duration = 192815
+artists = ['Julio Sosa']
+artist_ids = ['7Cg2eqV6oHNE0P54WfajIX']
+album = 'Yo soy aquel muchacho (Remastered)'
+album_id = '1zB0S2BkFXswb69GQic2hp'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d992763930e4a3b7bdde6d18'
+url = 'spotify:track:34YBorcCdFT0tGjOy5FD1Q'
+added_at = '2017-02-20T01:32:04Z'
+list_index = 24
+
+[[queue]]
+type = 'Track'
+id = '3gd0L8XJ1nfYV0xz61XPIH'
+uri = 'spotify:track:3gd0L8XJ1nfYV0xz61XPIH'
+title = 'María - Remastered'
+track_number = 6
+disc_number = 1
+duration = 176933
+artists = ['Julio Sosa']
+artist_ids = ['7Cg2eqV6oHNE0P54WfajIX']
+album = 'Yo soy aquel muchacho (Remastered)'
+album_id = '1zB0S2BkFXswb69GQic2hp'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d992763930e4a3b7bdde6d18'
+url = 'spotify:track:3gd0L8XJ1nfYV0xz61XPIH'
+added_at = '2017-02-20T01:32:47Z'
+list_index = 25
+
+[[queue]]
+type = 'Track'
+id = '1M0V464Om5OIG2p75I3LkS'
+uri = 'spotify:track:1M0V464Om5OIG2p75I3LkS'
+title = 'Yo soy aquel muchacho - Remastered'
+track_number = 1
+disc_number = 1
+duration = 197549
+artists = ['Julio Sosa']
+artist_ids = ['7Cg2eqV6oHNE0P54WfajIX']
+album = 'Yo soy aquel muchacho (Remastered)'
+album_id = '1zB0S2BkFXswb69GQic2hp'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273d992763930e4a3b7bdde6d18'
+url = 'spotify:track:1M0V464Om5OIG2p75I3LkS'
+added_at = '2017-02-20T01:34:42Z'
+list_index = 26
+
+[[queue]]
+type = 'Track'
+id = '5H4L6KSO8KFZJfwNxFzR9L'
+uri = 'spotify:track:5H4L6KSO8KFZJfwNxFzR9L'
+title = 'Mi Noche Triste'
+track_number = 7
+disc_number = 1
+duration = 211533
+artists = ['Julio Sosa']
+artist_ids = ['7Cg2eqV6oHNE0P54WfajIX']
+album = 'Cantor de Pueblo: Julio Sosa'
+album_id = '0kpAyV9cID64Se55OnxM0o'
+album_artists = ['Julio Sosa']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2731bb89e03af9267bc2d634a17'
+url = 'spotify:track:5H4L6KSO8KFZJfwNxFzR9L'
+added_at = '2017-02-20T01:35:15Z'
+list_index = 27
+
+[[queue]]
+type = 'Track'
+id = '6pcE6rFeF3mUGm6NCXtdT6'
+uri = 'spotify:track:6pcE6rFeF3mUGm6NCXtdT6'
+title = 'Garganta Con Arena - Live'
+track_number = 15
+disc_number = 1
+duration = 213920
+artists = [
+    'Cacho Castaña',
+    'Adriana Varela',
+]
+artist_ids = [
+    '3lwRbCTt1qmo0QgXUai8ao',
+    '5diAzb0BD6mSdU1xOhM7dc',
+]
+album = 'Yo Seré El Amor'
+album_id = '4ANkKSzNEcVTAUfs1vQ7BQ'
+album_artists = ['Cacho Castaña']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273f4f2da2e57299d13a7125bb4'
+url = 'spotify:track:6pcE6rFeF3mUGm6NCXtdT6'
+added_at = '2017-04-30T23:00:28Z'
+list_index = 28
+
+[[queue]]
+type = 'Track'
+id = '5wysW5SkWMTlex7pvxkBgE'
+uri = 'spotify:track:5wysW5SkWMTlex7pvxkBgE'
+title = 'Adios Nonino - Tres Minutos Con La Realidad'
+track_number = 1
+disc_number = 1
+duration = 297200
+artists = ['Astor Piazzolla Y Su Orchestra']
+artist_ids = ['7zkFQAt23z2X0UFgwZjqc6']
+album = 'Pulsacion'
+album_id = '3lwNt9cBMpLwiR7bl9GPzh'
+album_artists = ['Astor Piazzolla Y Su Orchestra']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2732d5e7d0b910eb895ee819342'
+url = 'spotify:track:5wysW5SkWMTlex7pvxkBgE'
+added_at = '2017-04-30T23:15:57Z'
+list_index = 29
+
+[[queue]]
+type = 'Track'
+id = '3SsPVhEHMoOlVwHMtng5mH'
+uri = 'spotify:track:3SsPVhEHMoOlVwHMtng5mH'
+title = 'Libertango'
+track_number = 5
+disc_number = 2
+duration = 251493
+artists = ['Astor Piazzolla']
+artist_ids = ['7dsugSamBB7enWE2IrlbFg']
+album = 'Libertango'
+album_id = '3md6pM7GoNvwOlwlHTzvvs'
+album_artists = ['Astor Piazzolla']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2739df3507f06b25736592361e1'
+url = 'spotify:track:3SsPVhEHMoOlVwHMtng5mH'
+added_at = '2017-04-30T23:16:16Z'
+list_index = 30
+
+[[queue]]
+type = 'Track'
+id = '1ZuIRo9QxyIFYH7jCs1yBM'
+uri = 'spotify:track:1ZuIRo9QxyIFYH7jCs1yBM'
+title = 'Yira Yira - Remastered'
+track_number = 1
+disc_number = 1
+duration = 167560
+artists = ['Carlos Gardel']
+artist_ids = ['05Q9xndTxhXhD5trpmTtfU']
+album = 'Selección Especial (Remastered)'
+album_id = '1C9C8SPrYf283qi2jZFxCF'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2739f709010fb74b252f79667ac'
+url = 'spotify:track:1ZuIRo9QxyIFYH7jCs1yBM'
+added_at = '2018-10-22T04:40:44Z'
+list_index = 31
+
+[[queue]]
+type = 'Track'
+id = '7ukT2pRQSW4P3j6TeAMI5m'
+uri = 'spotify:track:7ukT2pRQSW4P3j6TeAMI5m'
+title = 'Madreselva'
+track_number = 25
+disc_number = 1
+duration = 193345
+artists = ['Carlos Gardel']
+artist_ids = ['565cUJcstnH45SsWeXlpv3']
+album = 'Caminito'
+album_id = '45mjE1xZTbnfO9xe3q72bP'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273b1484d9cf1b840f5f76ad1c7'
+url = 'spotify:track:7ukT2pRQSW4P3j6TeAMI5m'
+added_at = '2018-10-22T04:59:26Z'
+list_index = 32
+
+[[queue]]
+type = 'Track'
+id = '1TCZpWAFBtfdeOj2YkOQDa'
+uri = 'spotify:track:1TCZpWAFBtfdeOj2YkOQDa'
+title = 'Chorra'
+track_number = 14
+disc_number = 2
+duration = 125400
+artists = ['Carlos Gardel']
+artist_ids = ['565cUJcstnH45SsWeXlpv3']
+album = 'Caminito'
+album_id = '45mjE1xZTbnfO9xe3q72bP'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273b1484d9cf1b840f5f76ad1c7'
+url = 'spotify:track:1TCZpWAFBtfdeOj2YkOQDa'
+added_at = '2018-10-22T05:00:55Z'
+list_index = 33
+
+[[queue]]
+type = 'Track'
+id = '7l73SQ87ssgpetyden4Kkz'
+uri = 'spotify:track:7l73SQ87ssgpetyden4Kkz'
+title = 'La Cumparsita'
+track_number = 21
+disc_number = 1
+duration = 135510
+artists = ['Carlos Gardel']
+artist_ids = ['565cUJcstnH45SsWeXlpv3']
+album = 'Caminito'
+album_id = '45mjE1xZTbnfO9xe3q72bP'
+album_artists = ['Carlos Gardel']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273b1484d9cf1b840f5f76ad1c7'
+url = 'spotify:track:7l73SQ87ssgpetyden4Kkz'
+added_at = '2018-10-22T05:02:18Z'
+list_index = 34
+
+[[queue]]
+type = 'Track'
+id = '2TscTCoQgLCYPkQ8PxGJo8'
+uri = 'spotify:track:2TscTCoQgLCYPkQ8PxGJo8'
+title = 'La Cumparsita'
+track_number = 18
+disc_number = 2
+duration = 153640
+artists = ['Julio Iglesias']
+artist_ids = ['4etuCZVdP8yiNPn4xf0ie5']
+album = 'My Life: The Greatest Hits'
+album_id = '21GSy4UKShEpEfrojAEK9U'
+album_artists = ['Julio Iglesias']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b2737703391d79ac40b36b4b1068'
+url = 'spotify:track:2TscTCoQgLCYPkQ8PxGJo8'
+added_at = '2018-10-22T05:06:03Z'
+list_index = 35
+
+[[queue]]
+type = 'Track'
+id = '1nUqhEDtK40wlTNUYMXetx'
+uri = 'spotify:track:1nUqhEDtK40wlTNUYMXetx'
+title = 'Ojalá Que No Puedas'
+track_number = 2
+disc_number = 1
+duration = 253133
+artists = ['Cacho Castaña']
+artist_ids = ['3lwRbCTt1qmo0QgXUai8ao']
+album = 'Soy un Tango'
+album_id = '3X95rHKO7spyfbJWLtwNLU'
+album_artists = ['Cacho Castaña']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b27393080e8f7b02b134142e757c'
+url = 'spotify:track:1nUqhEDtK40wlTNUYMXetx'
+added_at = '2018-10-22T05:17:19Z'
+list_index = 36
+
+[[queue]]
+type = 'Track'
+id = '3vel1AgSmG7R3Lzd7SkRjL'
+uri = 'spotify:track:3vel1AgSmG7R3Lzd7SkRjL'
+title = 'Garganta Con Arena'
+track_number = 11
+disc_number = 1
+duration = 192679
+artists = ['Cacho Castaña']
+artist_ids = ['3lwRbCTt1qmo0QgXUai8ao']
+album = 'Cacho De Buenos Aires'
+album_id = '0AYA5nujfNbdmGOmYCTmB8'
+album_artists = ['Cacho Castaña']
+cover_url = 'https://i.scdn.co/image/ab67616d0000b273a27d7b098ab4ed2a333e33a4'
+url = 'spotify:track:3vel1AgSmG7R3Lzd7SkRjL'
+added_at = '2018-10-22T05:17:41Z'
+list_index = 37
+[playlist_orders.5ZLjuRQA8IRSA7bOTJezIG]
 key = 'Added'
 direction = 'Descending'
 
-[playlist_orders.5ZLjuRQA8IRSA7bOTJezIG]
+[playlist_orders.7A4mTHI9ExPiRnK8TW1ci5]
 key = 'Added'
 direction = 'Descending'
