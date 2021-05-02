@@ -1,0 +1,33 @@
+set recolor true
+set recolor-keephue true
+
+set selection-clipboard "clipboard"
+
+set default-bg rgba(40,42,54,0.80)
+set default-fg rgba(235,219,178,1)
+
+set index-fg rgba(235,219,178,1)
+set index-bg rgba(40,40,40,0.70)
+set index-active-bg rgba(184,187,38,1)
+
+set highlight-color rgba(250,189,47,1)
+set highlight-active-color rgba(184,187,38,1)
+set highlight-transparency 0.4
+
+set completion-bg rgba(40,40,40,0.8)
+set completion-fg rgba(211,134,155,1)
+set completion-group-bg rgba(29,32,33,1)
+set completion-group-fg rgba(235,219,178,1)
+set completion-highlight-bg rgba(184,187,38,1)
+
+
+
+set recolor-darkcolor rgba(235,219,178,1)
+set recolor-lightcolor rgba(0,0,0,0.00)
+set recolor-reverse-video false
+
+
+set inputbar-bg rgba(0,0,0,0)
+
+set statusbar-bg rgba(29,32,33,0.7)
+set statusbar-fg rgba(211,134,155,1)

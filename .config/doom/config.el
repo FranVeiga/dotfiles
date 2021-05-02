@@ -21,9 +21,11 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "UbuntuMono Nerd Font" :size 16)
       doom-variable-pitch-font (font-spec :family "UbuntuMono Nerd Font" :size 16))
+
 (after! doom-themes
         (setq doom-themes-enable-bold t
               doom-themes-enable-italic t))
+
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
@@ -63,23 +65,53 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
 (setq-default tab-width 4)
 
-(map! :i "M-RET" 'evil-force-normal-state)
+(setq evil-escape-key-sequence "kk")
 
 ;; org-mode settings
+(map! :leader
+      :desc "Open org index file"
+      "o o" #'(lambda() (interactive) (find-file "~/org-wiki/index.org")))
+
 (after! org
   (setq org-agenda-files (directory-files-recursively "~/org-wiki/" "\\.org$"))
   (setq org-directory "~/org-wiki/notes")
   (setq org-hide-emphasis-markers t)
-  (map! :leader
-        :desc "Open org index file"
-        "o o" #'(lambda() (interactive) (find-file "~/org-wiki/index.org")))
-  (custom-set-faces
-        '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
-        '(org-level-2 ((t (:inherit outline-2 :height 1.3))))
-        '(org-level-3 ((t (:inherit outline-3 :height 1.15))))
-        '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
-)
+;; Set big headlines
+;;   (custom-set-faces
+;;         '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
+;;         '(org-level-2 ((t (:inherit outline-2 :height 1.3))))
+;;         '(org-level-3 ((t (:inherit outline-3 :height 1.15))))
+;;         '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+;; )
   )
+;; export org to markdown package
+(require 'ox-md)
+
+;; lines aren't longer than 80 chars in text modes (org, txt, etc.)
+(toggle-text-mode-auto-fill)
+
+
+
+;; set Alt + e to show neotree
+(map! :desc "Toggle Treemacs" :n "M-e" #'neotree-toggle)
+
+(add-hook 'neotree-mode-hook
+        (lambda ()
+                (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+                (define-key evil-normal-state-local-map (kbd "l") 'neotree-change-root)
+                (define-key evil-normal-state-local-map (kbd "h") 'neotree-select-up-node)
+                (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
+                (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+                (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
+                (define-key evil-normal-state-local-map (kbd "g") 'neotree-refresh)
+                (define-key evil-normal-state-local-map (kbd "n") 'neotree-next-line)
+                (define-key evil-normal-state-local-map (kbd "p") 'neotree-previous-line)
+                (define-key evil-normal-state-local-map (kbd "A") 'neotree-stretch-toggle)
+                (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)))
+
+
+
+;; (add-hook! 'vterm-mode-hook
+;;            (define-key evil-insert-state-local-map (kbd "kk") 'evil-escape))

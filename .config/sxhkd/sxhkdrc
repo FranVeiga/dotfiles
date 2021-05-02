@@ -4,25 +4,29 @@
 
 # terminal emulator
 super + {shift,control} + Return
-	{termite,termite --class Float}
+	{termite,termite --name Float}
 
 # program launcher
 super + p
-	rofi -modi drun -show drun -theme $HOME/.config/polybar/cuts/scripts/rofi/launcher.rasi
+	rofi -modi drun -show drun -theme $HOME/.config/polybar/$(cat /tmp/theme)/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+
 #
 # bspwm hotkeys
 #
+
+super + b
+    $HOME/scripts/bar-toggle
 
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
 super + shift + q
-    $HOME/scripts/bspwm_shutdown
+    $HOME/scripts/bspwm_logout
 
 # close and kill
 super + {_,control + }q
@@ -163,66 +167,63 @@ super + shift + y
 
 # System Shutdown
 super + shift + s
-    ~/scripts/dmenu_qtile_shutdown
+    $HOME/.config/polybar/$(cat /tmp/theme)/scripts/powermenu.sh
+    # ~/scripts/bspwm_shutdown
     
 # Select keyboard layout
+super + d
+    sh -c "$HOME/.config/polybar/$(cat /tmp/theme)/scripts/keyboard.sh"
 
 # Select current desktop icon
-super + shift + n
-    $HOME/scripts/rofi-desk-selector
+super + {shift,control} + n
+    {neovide,gksudo neovide}
 
 # Browser
 super + {_,shift +}u
     {vivaldi-stable,qutebrowser}
 
 # File browser
-super + e
-    termite -e ranger
+super +{_, shift +} e
+    {termite -e ranger,thunar}
 
 # Email client
-super + shift + e
+super + ctrl + e
     thunderbird
 
 # Volume control
 super + {_,shift +}a
-    {termite --class pulsemixer -e pulsemixer,pavucontrol}
+    {termite --name pulsemixer -e pulsemixer,pavucontrol}
 
 # Task manager
 super + {shift,control} + p
-    termite {--class htop -e htop, -e htop}
+    termite {--name htop -e htop, -e htop}
 
 
 
 ## Program keybinds
-super + {_,shift +}KP_Home
-    {termite --class ncspot -e ncspot,spotify}
+super + {_,shift + ,control + }KP_Home
+    {termite --name ncspot -e $HOME/scripts/tncspot,spotify,termite --name ncspotfloat -e $HOME/scripts/tncspot}
 
 super + {_,shift +}KP_Up
-    {termite --class castero -e castero,fluentreader}
+    {none,none}
 
 super + {_,shift +}KP_Prior
     {blueberry,virt-manager}
 
 super + {_,shift +}KP_Left
-    {/home/franveiga/.games/minecraft,steam}
+    {$HOME/.games/minecraft,steam}
 
 super + {_,shift +}KP_Begin
-    {emacs,bleachbit}
+    {emacsclient -nc,bleachbit}
 
 super + {_,shift +}KP_Right
-    {cherrytree,calibre}
+    {none,calibre}
 
 super + {_,shift +}KP_End
     {gimp,libreoffice}
 
 super + {_,shift +}KP_Down
-    {kdenlive,termite -e epr}
+    {none,none}
 
 super + {_,shift +}KP_Next
-    {freetube-bin,krita}
-
-
-
-
-
-
+    {none,none}

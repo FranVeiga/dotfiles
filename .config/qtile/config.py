@@ -7,8 +7,8 @@ from libqtile.lazy import lazy
 
 # sets the modifier key.
 mod = "mod4"
-terminal = "alacritty" # Alacritty is the recommended terminal, you'll probably have errors if you don't use it.
-browser = "firefox"
+terminal = "termite" # Alacritty is the recommended terminal, you'll probably have errors if you don't use it.
+browser = "vivaldi-stable"
 scripts_path = os.path.expanduser("~/scripts/")
 
 # ORIGINAL COLORSCHEME

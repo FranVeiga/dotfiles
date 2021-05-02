@@ -3,20 +3,28 @@ bspc -r "*"
 
 ### AUTOSTART
 
-picom --experimental-backend &
+# Set keyboard repeat delay
+xset r rate 150 40
+
+# touchegg for touchpad gestures
+touchegg &
+
+# picom --experimental-backend &
+picom &
 nitrogen --restore
-/usr/lib/lxpolkit/lxpolkit &
+pidof lxpolkit || /usr/lib/lxpolkit/lxpolkit &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
+emacs --daemon &
 
 killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	 
 
 # Uncomment if you have a system tray enabled
 # killall nm-applet; nm-applet &
-# killall blueman-applet; blueman-applet &
 # killall pamac-tray; pamac-tray &
-# killall protonvpn-tray; protonvpn-tray &
+# killall blueberry-tray; blueberry-tray &
 
-theme="cuts"
+theme="forest"
+echo $theme > /tmp/theme
 # POLYBAR
 $HOME/.config/polybar/$theme/launch.sh 
 # $HOME/.config/polybar/launch.sh --colorblocks
@@ -24,7 +32,10 @@ $HOME/.config/polybar/$theme/launch.sh
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # bspc monitor -d I II III IV V VI VII VIII
-bspc monitor -d         
+bspc monitor -d         
+
+
+
 
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
@@ -33,14 +44,16 @@ bspc config gapless_monocle               true
 bspc config border_width                  2
 bspc config window_gap                    4
 
-if [ $theme = "cuts" ]
-then
-    bspc config top_padding               28
-    bspc config bottom_padding            28
-else
-    bspc config top_padding               0
-    bspc config bottom_padding            0
-fi
+
+
+bspc config top_padding 0
+bspc config bottom_padding 0
+
+case $theme in
+    "cuts") bspc config top_padding 28; bspc config bottom_padding 28;;
+    "colorblocks") bspc config top_padding 38;;
+    "forest") bspc config top_padding 24;;
+esac
 
 bspc config left_padding                  0
 bspc config right_padding                 0
@@ -60,7 +73,7 @@ bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
 # WS I and VI monocle by default
-bspc desktop I -l next
+bspc desktop '^1' -l next
 
 # RULES
 
@@ -87,11 +100,13 @@ bspc rule -a *:lxpolkit state=floating
 bspc rule -a *:*:'Picture in picture' state=floating
 bspc rule -a *:Steam state=floating
 bspc rule -a *:pavucontrol state=floating
-bspc rule -a *:*:pulsemixer state=floating rectangle=500x250+440+275 sticky=on
-bspc rule -a *:*:htop state=floating rectangle=900x600+233+75 sticky=on
+bspc rule -a *:pulsemixer state=floating rectangle=500x250+440+275 sticky=on
+bspc rule -a *:htop state=floating rectangle=900x600+233+75 sticky=on
+bspc rule -a *:ncspotfloat state=floating rectangle=900x600+233+75 sticky=on
 bspc rule -a *:Float state=floating
 bspc rule -a *:*:Float state=floating
 bspc rule -a *:emacs state=tiled
+bspc rule -a *:org.pwmt.zathura state=tiled
 
 
 
@@ -118,7 +133,7 @@ bspc rule -a *:ncspot desktop='^4' follow=on
 bspc rule -a *:castero desktop='^4' follow=on
 bspc rule -a *:vocal desktop='^4' follow=on
 bspc rule -a *:pragha desktop='^4' follow=on
-bspc rule -a *:Spotify desktop='^4' follow=on
+bspc rule -a *:*:Spotify desktop='^4' follow=on
 
 
 
