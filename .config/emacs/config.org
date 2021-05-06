@@ -1,0 +1,385 @@
+#+TITLE: My own config
+#+AUTHOR: Francisco Veiga
+#+PROPERTY: header-args :tangle init.el
+#+STARTUP: overview
+#+OPTIONS: toc:nil
+
+
+* TABLE OF CONTENTS                                            :TOC:
+- [[THEMES][THEMES]]
+- [[PACKAGE MANAGER][PACKAGE MANAGER]]
+  - [[Making our package manager to support MELPA][Making our package manager to support MELPA]]
+  - [[Installing use-package][Installing use-package]]
+- [[EVIL MODE][EVIL MODE]]
+  - [[Install evil mode][Install evil mode]]
+  - [[Evil escape][Evil escape]]
+  - [[Evil commentary][Evil commentary]]
+  - [[Evil surround][Evil surround]]
+  - [[Evil org][Evil org]]
+  - [[Undo system (undo-fu)][Undo system (undo-fu)]]
+- [[ORG MODE][ORG MODE]]
+  - [[Org configuration][Org configuration]]
+  - [[org-plus-contrib][org-plus-contrib]]
+  - [[org-superstar][org-superstar]]
+  - [[toc-org][toc-org]]
+- [[GUI SETTINGS][GUI SETTINGS]]
+  - [[Disable menu bar, tool bar, and scroll bar.][Disable menu bar, tool bar, and scroll bar.]]
+- [[FONTS][FONTS]]
+- [[SEARCH (IVY AND COUNSEL)][SEARCH (IVY AND COUNSEL)]]
+- [[KEYBINDINGS][KEYBINDINGS]]
+  - [[Keybind plugins][Keybind plugins]]
+  - [[Basic][Basic]]
+  - [[Files][Files]]
+  - [[Buffers][Buffers]]
+  - [[Windows][Windows]]
+  - [[Org][Org]]
+- [[OTHER][OTHER]]
+  - [[Truncate lines in text files][Truncate lines in text files]]
+  - [[Set default buffer on clients][Set default buffer on clients]]
+  - [[Set smooth scrolling][Set smooth scrolling]]
+  - [[Set backup location][Set backup location]]
+
+* THEMES
+  I load the themes first so emacs is in dark mode while loading.
+  #+begin_src emacs-lisp
+(use-package doom-themes
+    :ensure t)
+(setq doom-themes-enable-bold t
+    doom-themes-enable-italic t)
+(load-theme 'doom-molokai t)
+  #+end_src
+
+  Install the doom emacs modeline
+  #+begin_src emacs-lisp
+(use-package doom-modeline
+    :ensure t)
+(doom-modeline-mode 1)
+  #+end_src
+
+* PACKAGE MANAGER
+** Making our package manager to support MELPA
+
+ #+begin_src emacs-lisp
+   (require 'package)
+
+   (add-to-list 'package-archives
+       '("melpa" . "https://melpa.org/packages/"))
+   (add-to-list 'package-archives
+       '("org" . "https://orgmode.org/elpa/"))
+   ;; (package-refresh-contents)
+   (package-initialize)
+ #+end_src
+
+** Installing use-package
+
+#+begin_src emacs-lisp
+(unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+#+end_src
+
+* EVIL MODE
+** Install evil mode
+#+begin_src emacs-lisp
+(use-package evil
+    :ensure t ;; install evil if not installed
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-undo-system 'undo-fu)
+    (evil-mode))
+(use-package evil-collection
+    :after evil
+    :ensure t
+    :config
+    (evil-collection-init))
+#+end_src
+
+** Evil escape
+Evil-escape is for setting a two key sequence to enter normal
+mode. Mine is set to "kk".
+#+begin_src emacs-lisp
+(use-package evil-escape
+    :after evil
+    :ensure t
+    :config
+    (setq evil-escape-key-sequence "kk")
+    (setq evil-escape-delay 0.2)
+    (add-to-list 'evil-escape-excluded-major-modes 'ibuffer-mode)
+    (evil-escape-mode))
+#+end_src
+
+** Evil commentary
+#+begin_src emacs-lisp
+  (use-package evil-commentary
+      :after evil
+      :ensure t
+      :config
+      (evil-commentary-mode))
+#+end_src
+
+** Evil surround
+#+begin_src emacs-lisp
+  (use-package evil-surround
+      :after evil
+      :ensure t
+      :config
+      (global-evil-surround-mode 1))
+#+end_src
+
+** Evil org
+Evil-org adds some evil keybindings to Org mode.
+#+begin_src emacs-lisp
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+#+end_src
+
+** Undo system (undo-fu)
+   Use undo-fu to make undo-redo operations
+#+begin_src emacs-lisp
+(use-package undo-fu
+    :ensure t)
+(define-key evil-normal-state-map "u" 'undo-fu-only-undo)
+(define-key evil-normal-state-map "\C-r" 'undo-fu-only-redo)
+#+end_src
+
+* ORG MODE
+** Org configuration
+  #+begin_src emacs-lisp
+    (use-package org
+        ;:bind (:map org-mode-map ("RET" . org-open-at-point))
+        :init
+        (setq org-hide-emphasis-markers t)
+        (setq org-hide-leading-stars t)
+        ;;(add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))  
+        (setq org-return-follows-link t) ;; pressing RET follow the link under the pointer
+        (setq org-startup-indented t)
+
+        (setq org-directory "~/org-wiki")
+        (setq org-default-notes-file (concat org-directory "/ideas.org"))
+
+        :config
+        (add-to-list 'org-link-frame-setup '(file . find-file)) ;; links open in the current window, not in splits
+        (load "~/.emacs.d/load/org-funcs.el") ;; load some org functions
+    )
+  #+end_src
+
+** org-plus-contrib
+  #+begin_src emacs-lisp
+(use-package org
+    :ensure org-plus-contrib)   
+  #+end_src
+
+** org-superstar
+  #+begin_src emacs-lisp
+(use-package org-superstar
+    :ensure t
+    :init
+    :hook (org-mode . (lambda () (org-superstar-mode 1))))
+  #+end_src
+
+** toc-org
+  #+begin_src emacs-lisp
+    (use-package toc-org
+        :ensure t
+        :init (setq toc-org-hrefify-default "org")
+        :hook (org-mode . (lambda () (toc-org-mode)))
+
+    )
+  #+end_src
+  
+* GUI SETTINGS
+** Disable menu bar, tool bar, and scroll bar.
+
+  #+begin_src emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+(setq display-line-numbers-type 'relative) ;; set relative line numbers
+(display-line-numbers-mode)
+  #+end_src
+  
+* FONTS
+   #+begin_src emacs-lisp
+(set-face-attribute 'default nil
+    :font "UbuntuMono Nerd Font 13"
+    :weight 'medium)
+(set-face-attribute 'variable-pitch nil
+    :font "UbuntuMono Nerd Font 13"
+    :weight 'medium)
+
+(add-to-list 'default-frame-alist '(font . "UbuntuMono Nerd Font 13"))
+
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+   #+end_src
+   
+* SEARCH (IVY AND COUNSEL)
+  Install the ivy search engine and install counsel for using ivy everywhere.
+  #+begin_src emacs-lisp
+(use-package ivy
+    :ensure t
+    :init
+	(setq ivy-use-virtual-buffers t)
+	(setq enable-recursive-minibuffers t))
+	(ivy-mode)
+;;      enable this if using swiper
+;;      (setq search-default-mode #'char-fold-to-regexp)
+(use-package counsel
+    :ensure t)
+    ;;:init
+	;;(counsel-mode))
+  #+end_src
+
+* KEYBINDINGS
+** Keybind plugins
+*** Which-key
+
+Install the which-key package so we have real-time docs on what each keybinding does.
+#+begin_src emacs-lisp
+(use-package which-key
+    :ensure t)
+(which-key-mode)
+#+end_src
+
+*** General
+
+   #+begin_src emacs-lisp
+(use-package general
+    :ensure t
+    :config
+	(general-evil-setup t))
+   #+end_src
+   
+** Basic
+   Some essential keybindings (might reorganize later)
+   #+begin_src emacs-lisp
+     (general-nvmap :prefix "SPC"
+         "SPC"   '(counsel-M-x :which-key "M-x")
+         "."     '(find-file :which-key "Find file")
+         "h r r" '((lambda() (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload config")
+
+         "h r R" '((lambda() (interactive)
+                             '(org-ctrl-ctrl-c)
+                             (org-babel-tangle-file "~/.emacs.d/config.org")
+                             (load-file "~/.emacs.d/init.el")) :which-key "Tangle and reload config")
+
+         "o o"   '((lambda() (interactive) (find-file "~/org-wiki/index.org")) :which-key "org-wiki")
+     )
+   #+end_src
+
+** Files
+#+begin_src emacs-lisp
+(general-nvmap :prefix "SPC f"
+    "" '(nil :which-key "file")
+    "s" '(save-buffer :which-key "save")
+    "q" '(save-buffers-kill-emacs :which-key "save & quit")
+    "D" '(delete-file :which-key "delete")
+    "p"   '((lambda() (interactive) (find-file "~/.emacs.d/config.org")) :which-key "Edit config")
+    "r"   '(counsel-recentf :which-key "Recent files")
+)
+#+end_src
+
+** Buffers
+   #+begin_src emacs-lisp
+(general-nvmap :prefix "SPC b"
+    "" '(nil :which-key "buffer")
+    "k" '(evil-delete-buffer    :which-key "delete")
+    "n" '(evil-buffer-new       :which-key "new")
+    "b" '(counsel-switch-buffer :which-key "change")
+    "l" '(evil-switch-to-windows-last-buffer :which-key "last")
+    "p" '(previous-buffer :which-key "previous")
+    "n" '(next-buffer :which-key "next")
+    "N" '(evil-buffer-new :which-key "new")
+)
+   #+end_src
+
+** Windows
+   #+begin_src emacs-lisp
+(general-nvmap :prefix "SPC w"
+    "" '(nil :which-key "windows")
+    "j" '(evil-window-down :which-key "down")
+    "k" '(evil-window-up :which-key "up")
+    "l" '(evil-window-right :which-key "right")
+    "h" '(evil-window-left :which-key "left")
+    "c" '(evil-window-delete :which-key "close")
+    "s" '(split-window-vertically :which-key "close")
+    "v" '(split-window-horizontally :which-key "close")
+    ">" '(evil-window-increase-width :which-key "increase width")
+    "<" '(evil-window-decrease-width :which-key "decrease width")
+    "=" '(evil-window-increase-height :which-key "increase height")
+    "-" '(evil-window-decrease-height :which-key "decrease height")
+)
+   #+end_src
+
+** Org
+#+begin_src emacs-lisp
+(general-nmap :keymaps '(org-mode-map) "RET" '+org/dwim-at-point) ;;open links with enter
+
+(general-nvmap :prefix "SPC m" 
+    :keymaps '(org-mode-map)
+        "" '(nil :which-key "org")
+        "e" '(org-export-dispatch :which-key "export")
+        "c" '(org-capture :which-key "capture")
+    )
+#+end_src
+
+*** Links
+#+begin_src emacs-lisp
+(general-nmap :keymaps '(org-mode-map) :prefix "SPC m l"
+    "" '(nil :which-key "link")
+    "t" '(org-toggle-link-display :which-key "Toggle links")
+    "l" '(org-insert-link :which-key "Insert")
+    "L" '(org-insert-last-stored-link :which-key "Last stored")
+  )
+#+end_src
+
+*** Tables
+#+begin_src emacs-lisp
+(general-nmap :keymaps '(org-mode-map) :prefix "SPC m t"
+    "h" '(org-table-insert-hline :wk "insert hline")
+    "r" '(org-table-insert-row :wk "insert row")
+    "c" '(org-table-insert-column :wk "insert column")
+)
+#+end_src
+
+* OTHER
+** Truncate lines in text files
+   #+begin_src emacs-lisp
+(toggle-text-mode-auto-fill) 
+;;(global-visual-line-mode t) ;; alternative
+   #+end_src
+
+
+** Set default buffer on clients
+#+begin_src emacs-lisp
+(setq initial-buffer-choice "~/org-wiki/index.org")
+#+end_src
+
+
+** Set smooth scrolling
+#+begin_src emacs-lisp
+(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+(setq auto-window-vscroll nil)
+(setq scroll-margin 6)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil) 
+#+end_src
+
+
+** Set backup location
+
+#+begin_src emacs-lisp
+  (setq backup-directory-alist '(("." . "~/.emacs.d/file-backups")))
+;;lsadlsadjflksdfjlsadff
+#+end_src
+
+
