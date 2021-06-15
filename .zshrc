@@ -98,6 +98,8 @@ fi
 # set personal environment variables
 export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar
 export GITHUB="https://github.com/FranVeiga/"
+export TUIR_BROWSER="mpv"
+export TUIR_URLVIEWER="feh"
 #export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 export MANPAGER="nvim -c 'set ft=man || NERDTreeToggle' -"
 

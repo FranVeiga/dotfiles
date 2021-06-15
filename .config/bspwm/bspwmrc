@@ -10,7 +10,7 @@ xset r rate 150 40
 touchegg &
 
 # picom --experimental-backend &
-picom &
+# picom &
 nitrogen --restore
 pidof lxpolkit || /usr/lib/lxpolkit/lxpolkit &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &

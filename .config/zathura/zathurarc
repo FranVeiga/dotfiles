@@ -3,7 +3,7 @@ set recolor-keephue true
 
 set selection-clipboard "clipboard"
 
-set default-bg rgba(40,42,54,0.80)
+set default-bg rgba(40,42,54,1)
 set default-fg rgba(235,219,178,1)
 
 set index-fg rgba(235,219,178,1)
