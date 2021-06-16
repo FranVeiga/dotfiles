@@ -6,6 +6,7 @@
 
 
 * TABLE OF CONTENTS                                            :TOC:
+- [[INSTALLATION][INSTALLATION]]
 - [[THEMES][THEMES]]
 - [[PACKAGE MANAGER][PACKAGE MANAGER]]
   - [[Making our package manager to support MELPA][Making our package manager to support MELPA]]
@@ -38,6 +39,19 @@
   - [[Set default buffer on clients][Set default buffer on clients]]
   - [[Set smooth scrolling][Set smooth scrolling]]
   - [[Set backup location][Set backup location]]
+
+* INSTALLATION
+Move the folder ```.config/emacs``` of this repo to your home directory and rename it as
+.emacs.d
+
+Then, open this file on Emacs and, on the first line of the file press
+```C-c C-c C-c C-v C-t``` (Check that the line which says
+```(package-refresh-contents)``` under the section ```PACKAGE
+MANAGER``` is uncommented)
+
+After that restart emacs and all packages should have been downloaded.
+
+If it didn't work, try removing the file ```.emacs``` of your home directory.
 
 * THEMES
   I load the themes first so emacs is in dark mode while loading.
