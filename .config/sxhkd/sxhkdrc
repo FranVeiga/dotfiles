@@ -171,16 +171,17 @@ super + shift + s
     # ~/scripts/bspwm_shutdown
     
 # Select keyboard layout
-super + d
-    sh -c "$HOME/.config/polybar/$(cat /tmp/theme)/scripts/keyboard.sh"
+super + space
+    sh -c $HOME/scripts/toggle-keyboard.sh
+    # sh -c "$HOME/.config/polybar/$(cat /tmp/theme)/scripts/keyboard.sh"
 
-# Select current desktop icon
+# Open neovide
 super + {shift,control} + n
     {neovide,gksudo neovide}
 
 # Browser
 super + {_,shift +}u
-    {vivaldi-stable,qutebrowser}
+    {firefox,vivaldi-stable}
 
 # File browser
 super +{_, shift +} e

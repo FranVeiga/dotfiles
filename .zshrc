@@ -68,9 +68,9 @@ ZSH_THEME="tjkirch"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump archlinux)
+plugins=(git archlinux)
 
-[[ -s /home/user/.autojump/etc/profile.d/autojump.sh  ]] && source /home/user/.autojump/etc/profile.d/autojump.sh
+eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
 
 autoload -U compinit && compinit -u
 
@@ -87,21 +87,20 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
+    export EDITOR='nvim'
 else
-    export EDITOR='vim'
+    export EDITOR='nvim'
 fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # set personal environment variables
-export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar
 export GITHUB="https://github.com/FranVeiga/"
 export TUIR_BROWSER="mpv"
 export TUIR_URLVIEWER="feh"
 #export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-export MANPAGER="nvim -c 'set ft=man || NERDTreeToggle' -"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # Set Vim mode
 bindkey -v

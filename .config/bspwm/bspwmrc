@@ -16,6 +16,8 @@ pidof lxpolkit || /usr/lib/lxpolkit/lxpolkit &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 emacs --daemon &
 
+xss-lock -- betterlockscreen -s &
+
 killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	 
 
 # Uncomment if you have a system tray enabled
