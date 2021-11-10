@@ -108,7 +108,8 @@ fi
 
 
 # ENVIRONMENT VARIABLES
-export PATH=$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar
+export PATH="$PATH:/home/franveiga/scripts:/home/franveiga/.games:/home/franveiga/scripts/statusbar:/home/franveiga/.local/bin"
 export GITHUB="https://github.com/FranVeiga/"
-export EDITOR=/usr/bin/nvim
+# export EDITOR=/usr/bin/nvim
+export EDITOR="lvim"
 
