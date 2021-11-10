@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+tmux -L ncspot new -A -s ncspot ncspot

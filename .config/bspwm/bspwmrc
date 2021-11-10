@@ -6,57 +6,48 @@ bspc -r "*"
 # Set keyboard repeat delay
 xset r rate 150 40
 
+# Set compose key
+setxkbmap -option compose:ralt
+setxkbmap -option caps:swapescape
+
 # touchegg for touchpad gestures
-touchegg &
+# touchegg &
 
-# picom --experimental-backend &
 # picom &
-nitrogen --restore
-pidof lxpolkit || /usr/lib/lxpolkit/lxpolkit &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
-emacs --daemon &
+nitrogen --restore                                                      # wallpaper
+$HOME/.config/polybar/launch.sh                                         # polybar
+pidof lxpolkit || /usr/lib/lxpolkit/lxpolkit &                          # policy kit
+dunst &                                                                 # notifications
+# emacs --daemon &                                                      # emacs daemon
+xss-lock -- betterlockscreen -s &                                       # screensaver
+# killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	# redshift
+pgrep -x sxhkd > /dev/null || sxhkd &                                   # hotkey daemon
 
-xss-lock -- betterlockscreen -s &
 
-killall redshift; killall redshift-gtk; sleep 5 && redshift-gtk &    	 
+# theme="forest"
+# case $theme in
+#     "cuts") bspc config top_padding 28; bspc config bottom_padding 28;;
+#     "colorblocks") bspc config top_padding 38;;
+#     "forest") bspc config top_padding 24;;
+# esac
+
 
 # Uncomment if you have a system tray enabled
 # killall nm-applet; nm-applet &
 # killall pamac-tray; pamac-tray &
 # killall blueberry-tray; blueberry-tray &
 
-theme="forest"
-echo $theme > /tmp/theme
-# POLYBAR
-$HOME/.config/polybar/$theme/launch.sh 
-# $HOME/.config/polybar/launch.sh --colorblocks
-
-pgrep -x sxhkd > /dev/null || sxhkd &
-
 # bspc monitor -d I II III IV V VI VII VIII
-bspc monitor -d         
-
-
-
+bspc monitor -d 1 2 3 4 5 6 7 8
+# bspc monitor -d         
 
 bspc config split_ratio                   0.50
 bspc config borderless_monocle            true
 bspc config gapless_monocle               true
-
 bspc config border_width                  2
 bspc config window_gap                    4
-
-
-
-bspc config top_padding 0
-bspc config bottom_padding 0
-
-case $theme in
-    "cuts") bspc config top_padding 28; bspc config bottom_padding 28;;
-    "colorblocks") bspc config top_padding 38;;
-    "forest") bspc config top_padding 24;;
-esac
-
+bspc config top_padding                   0
+bspc config bottom_padding                0
 bspc config left_padding                  0
 bspc config right_padding                 0
 
@@ -74,8 +65,26 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
-# WS I and VI monocle by default
-bspc desktop '^1' -l next
+# WS I monocle by default
+# bsp-layout set monocle   
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bsp-layout set tiled 
+# bspc desktop '^1' -l next
+
+bsp-layout set monocle 1  
+bsp-layout set tiled 2
+bsp-layout set tiled 3
+bsp-layout set tiled 4
+bsp-layout set tiled 5
+bsp-layout set tiled 6
+bsp-layout set tiled 7
+bsp-layout set tiled 8
+
 
 # RULES
 
@@ -109,6 +118,7 @@ bspc rule -a *:Float state=floating
 bspc rule -a *:*:Float state=floating
 bspc rule -a *:emacs state=tiled
 bspc rule -a *:org.pwmt.zathura state=tiled
+bspc rule -a *:dragon-drag-and-drop state=floating sticky=on
 
 
 

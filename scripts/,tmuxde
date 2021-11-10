@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+
+if [ $(echo $TERM) != "screen" ]; then
+    tmux new-session -s main -d zsh -c tmux source ~/scripts/tmuxde 
+
+    tmux a -t main 
+fi
+
+    tmux split-window -h tty-clock -c
+    tmux resize-pane -t 0 -x 60%
+
+    tmux split-window -t 0 -v htop
+    tmux resize-pane -t 0 -y 83%
+
+    tmux split-window -t 2 -v calcurse
+    tmux resize-pane -t 2 -y 20%
+
+    tmux select-pane -t 0

@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + {shift,control} + Return
-	{termite,termite --name Float}
+	{alacritty,alacritty --class Float}
 
 # program launcher
 super + p
-	rofi -modi drun -show drun -theme $HOME/.config/polybar/$(cat /tmp/theme)/scripts/rofi/launcher.rasi
+	rofi -modi drun -show drun -theme $HOME/.config/polybar/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -32,13 +32,21 @@ super + shift + q
 super + {_,control + }q
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+# alternate between the tiled and monocle layouts
 super + m
-	bspc desktop -l next
+	bsp-layout cycle --layouts monocle,tiled
+
+# alternate between tiled, tall and grid layouts
+super + n
+    bsp-layout cycle --layouts tall,grid,tiled
+    
 
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
+
+super + alt + y
+    bspc node newest.!automatic.local -i
 
 # swap the current node and the biggest window
 super + g
@@ -159,7 +167,7 @@ Print
 
 ### Youtube MPV Shortcut ###
 super + shift + y
-    bash -c 'mpv --x11-name=Float --autofit=500 $(xclip -selection clipboard -o)'
+    bash -c 'mpv --ytdl-format="best[height<=720]" --x11-name=Float --autofit=500 $(xclip -selection clipboard -o)'
 
 
 
@@ -167,13 +175,13 @@ super + shift + y
 
 # System Shutdown
 super + shift + s
-    $HOME/.config/polybar/$(cat /tmp/theme)/scripts/powermenu.sh
+    $HOME/.config/polybar/scripts/powermenu.sh
     # ~/scripts/bspwm_shutdown
     
 # Select keyboard layout
 super + space
     sh -c $HOME/scripts/toggle-keyboard.sh
-    # sh -c "$HOME/.config/polybar/$(cat /tmp/theme)/scripts/keyboard.sh"
+    # sh -c "$HOME/.config/polybar/scripts/keyboard.sh"
 
 # Open neovide
 super + {shift,control} + n
@@ -185,7 +193,7 @@ super + {_,shift +}u
 
 # File browser
 super +{_, shift +} e
-    {termite -e ranger,thunar}
+    {alacritty -e ranger,thunar}
 
 # Email client
 super + ctrl + e
@@ -193,20 +201,22 @@ super + ctrl + e
 
 # Volume control
 super + {_,shift +}a
-    {termite --name pulsemixer -e pulsemixer,pavucontrol}
+    {alacritty --class pulsemixer -e pulsemixer,pavucontrol}
 
 # Task manager
 super + {shift,control} + p
-    termite {--name htop -e htop, -e htop}
+    alacritty {--class htop -e htop, -e htop}
 
-
+# Read my books
+super + shift + b
+    $HOME/scripts/rofi-books.sh
 
 ## Program keybinds
 super + {_,shift + ,control + }KP_Home
-    {termite --name ncspot -e $HOME/scripts/tncspot,spotify,termite --name ncspotfloat -e $HOME/scripts/tncspot}
+    {alacritty --class ncspot -e $HOME/scripts/tncspot,spotify,alacritty --class ncspotfloat -e $HOME/scripts/tncspot}
 
 super + {_,shift +}KP_Up
-    {none,none}
+    {notion-app,none}
 
 super + {_,shift +}KP_Prior
     {blueberry,virt-manager}

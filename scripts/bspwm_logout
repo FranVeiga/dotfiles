@@ -1,0 +1,9 @@
+#! /bin/sh
+
+# rofitheme = "~/.config/polybar/$(cat /tmp/theme)/scripts/rofi/launcher.rasi"
+
+case $(printf 'No\nYes\nRestart WM' | rofi -show -theme "~/.config/polybar/$(cat /tmp/theme)/scripts/rofi/launcher.rasi" -dmenu -l 3 -i -p 'Exit Bspwm?' ) in  
+    'Yes') bspc quit;;
+    'Restart WM') bspc wm -r;;
+esac
+

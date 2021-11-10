@@ -1,0 +1,24 @@
+#! /bin/sh
+
+polybar-msg cmd toggle
+
+# case $(bspc config top_padding) in
+#     0) bspc config top_padding 38;;
+#     38) bspc config top_padding 0;;
+# esac
+
+if [ $(bspc config top_padding) -gt 0 ]; then
+    bspc config top_padding 0
+    bspc config bottom_padding 0
+
+elif [ $(cat /tmp/theme) = "colorblocks" ]; then
+    bspc config top_padding 38
+
+elif [ $(cat /tmp/theme) = "cuts" ]; then
+    bspc config top_padding 28; bspc config bottom_padding 28
+
+elif [ $(cat /tmp/theme) == "forest" ]; then
+    bspc config top_padding 24
+
+fi
+

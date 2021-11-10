@@ -157,110 +157,141 @@ font:
 draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#131313'
+#     foreground: '#c5c8c6'
+# 
+#     # Bright and dim foreground colors
+#     #
+#     # The dimmed foreground color is calculated automatically if it is not present.
+#     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+#     # is `false`, the normal foreground color will be used.
+#     dim_foreground: '#828482'
+#     bright_foreground: '#eaeaea'
+# 
+#   # Cursor colors
+#   #
+#   # Colors which should be used to draw the terminal cursor.
+#   #
+#   # Allowed values are CellForeground and CellBackground, which reference the
+#   # affected cell, or hexadecimal colors like #ff00ff.
+#   cursor:
+#     text: CellBackground
+#     cursor: CellForeground
+# 
+#   # Vi mode cursor colors
+#   #
+#   # Colors for the cursor when the vi mode is active.
+#   #
+#   # Allowed values are CellForeground and CellBackground, which reference the
+#   # affected cell, or hexadecimal colors like #ff00ff.
+#   vi_mode_cursor:
+#     text: CellBackground
+#     cursor: CellForeground
+# 
+#   # Selection colors
+#   #
+#   # Colors which should be used to draw the selection area.
+#   #
+#   # Allowed values are CellForeground and CellBackground, which reference the
+#   # affected cell, or hexadecimal colors like #ff00ff.
+#   selection:
+#     text: CellBackground
+#     background: CellForeground
+# 
+#   # Search colors
+#   #
+#   # Colors used for the search bar and match highlighting.
+#   #
+#   # Allowed values are CellForeground and CellBackground, which reference the
+#   # affected cell, or hexadecimal colors like #ff00ff.
+#   search:
+#     matches:
+#       foreground: '#000000'
+#       background: '#F75321'
+#   #
+#   #  bar:
+#       background: CellForeground
+#       foreground: CellBackground
+# 
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xc62828'
+#     green:   '0x62A136'
+#     yellow:  '0xf9a825'
+#     blue:    '0x1565c0'
+#     magenta: '0x6a1e9a'
+#     cyan:    '0x00838f'
+#     white:   '0xf2f2f2'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '0x545454'
+#     red:     '0xef5350'
+#     green:   '0x8bc34a'
+#     yellow:  '0xffeb3b'
+#     blue:    '0x64b5f6'
+#     magenta: '0xba68c8'
+#     cyan:    '0x26c6da'
+#     white:   '0xe0e0e0'
+# 
+# # Dim colors
+#   #
+#   # If the dim colors are not set, they will be calculated automatically based
+#   # on the `normal` colors.
+#   dim:
+#     black:   '0x333333'
+#     red:     '0xf2777a'
+#     green:   '0x99cc99'
+#     yellow:  '0xffcc66'
+#     blue:    '0x6699cc'
+#     magenta: '0xcc99cc'
+#     cyan:    '0x66cccc'
+#     white:   '0xdddddd'
+# 
+#   # Indexed Colors
+#   #
+#   # The indexed colors include all colors from 16 to 256.
+#   # When these are not set, they're filled with sensible defaults.
+#   #
+#   # Example:
+#   #   `- { index: 16, color: '#ff00ff' }`
+#   #
+#   #indexed_colors: []
+
+
 colors:
   # Default colors
   primary:
-    background: '#131313'
-    foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    dim_foreground: '#828482'
-    bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  cursor:
-    text: CellBackground
-    cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  selection:
-    text: CellBackground
-    background: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  search:
-    matches:
-      foreground: '#000000'
-      background: '#F75321'
-  #
-  #  bar:
-      background: CellForeground
-      foreground: CellBackground
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xc62828'
-    green:   '0x62A136'
-    yellow:  '0xf9a825'
-    blue:    '0x1565c0'
-    magenta: '0x6a1e9a'
-    cyan:    '0x00838f'
-    white:   '0xf2f2f2'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black:   '0x545454'
-    red:     '0xef5350'
-    green:   '0x8bc34a'
-    yellow:  '0xffeb3b'
-    blue:    '0x64b5f6'
-    magenta: '0xba68c8'
-    cyan:    '0x26c6da'
-    white:   '0xe0e0e0'
-
-# Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
 # Bell
 #
@@ -307,7 +338,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+background_opacity: 1
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -391,7 +422,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
 
-  url:
+  hints:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.

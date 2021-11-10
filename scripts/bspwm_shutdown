@@ -1,0 +1,6 @@
+#! /bin/bash
+
+case $(printf 'No\nYes\nReboot' | rofi -show -theme "$HOME/.config/polybar/$(cat /tmp/theme)/scripts/rofi/launcher.rasi" -dmenu -l 3 -i -p "Shutdown?") in 
+    Yes) systemctl poweroff;;
+    Reboot) systemctl reboot;;
+esac

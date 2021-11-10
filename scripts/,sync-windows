@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -d /run/media/franveiga/Nuevo\ vol ]; then
+    rsync --delete -auv "$HOME/docs/colegio/2021/" "/run/media/franveiga/Nuevo vol/Linux Shared/colegio" 
+fi

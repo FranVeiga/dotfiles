@@ -1,0 +1,7 @@
+#! /bin/sh
+
+cd $HOME/Documents/utn/clases
+
+youtube-dl -f 'best[height<=360]' --referer https://campus.ingreso-utn.com/ $1
+
+cd -
