@@ -185,11 +185,11 @@ super + space
 
 # Open neovide
 super + {shift,control} + n
-    {neovide,gksudo neovide}
+    {alacritty -e $HOME/.local/bin/lvim,gksudo neovide}
 
 # Browser
 super + {_,shift +}u
-    {firefox,vivaldi-stable}
+    {brave,vivaldi-stable}
 
 # File browser
 super +{_, shift +} e

@@ -1,4 +1,2 @@
-configuration {
-	theme: "/usr/share/rofi/themes/DarkBlue.rasi";
-}
 @import "/usr/share/rofi/themes/Monokai.rasi"
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

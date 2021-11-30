@@ -13,18 +13,20 @@ vim.cmd("set nu rnu")
 vim.cmd("set completeopt=menu,menuone,noselect")
 vim.cmd("set virtualedit=onemore")
 lvim.line_wrap_cursor_movement = false
-
 lvim.leader = "space"
 
 -- keymappings
 lvim.keys.insert_mode.kk = "<ESC>"
-lvim.keys.term_mode.kk = "<C-\\><C-n>"
+lvim.keys.term_mode["<ESC>"] = "<C-\\><C-n>"
+lvim.keys.term_mode.kk = "kk"
+
 
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
+
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {"norg"}
@@ -40,31 +42,30 @@ end
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-lvim.builtin.cmp.mapping = {
-     ["<Tab>"] = function()
-         if vim.fn.pumvisible() == 1 then
-             vim.fn.feedkeys(T("<C-n>"), "n")
-         elseif luasnip.expand_or_jumpable() then
-             vim.fn.feedkeys(T "<Plug>luasnip-expand-or-jump", "")
+
+
+lvim.builtin.cmp.mappings = {
+     -- ["<Tab>"] = function()
+     ["<Tab>"] = cmp.mapping(function(fallback)
+         if luasnip.expand_or_jumpable() then
+             vim.fn.feedkeys(T("<Plug>luasnip-expand-or-jump"), "")
          else
+             cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
              vim.fn.feedkeys(T("<Tab>"), "n")
-           end
-     end,
+             fallback()
+         end
+     end),
 
      ["<S-Tab>"] = cmp.mapping(function(fallback)
-       if vim.fn.pumvisible() == 1 then
-         vim.fn.feedkeys(T "<C-p>", "n")
-       elseif luasnip.jumpable(-1) then
+       if luasnip.jumpable(-1) then
          vim.fn.feedkeys(T "<Plug>luasnip-jump-prev", "")
        else
+         cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
          fallback()
        end
      end, { "i", "s", }
-    ),
+    )
 }
-
--- Add neorg source
-lvim.builtin.cmp.sources = {"neorg"}
 
 
 
@@ -138,22 +139,22 @@ lvim.plugins = {
 
   -- One Dark
   {"navarasu/onedark.nvim"},
-  {"Pocco81/Catppuccino.nvim",
-    config = function()
-        require("catppuccino").setup(
-                {
-                    integrations = {
-                        telescope = true,
-                        nvimtree = true,
-                        barbar = true,
-                        which_key = true,
-                        dashboard = true,
-                        gitsigns = true
-                    }
-                }
-            )
-    end
-    },
+  -- {"Pocco81/Catppuccino.nvim",
+  --   config = function()
+  --       require("catppuccino").setup(
+  --               {
+  --                   integrations = {
+  --                       telescope = true,
+  --                       nvimtree = true,
+  --                       barbar = true,
+  --                       which_key = true,
+  --                       dashboard = true,
+  --                       gitsigns = true
+  --                   }
+  --               }
+  --           )
+  --   end
+  --   },
 
 
   {"norcalli/nvim-colorizer.lua",
@@ -293,8 +294,9 @@ lvim.builtin.which_key.on_config_done = function()
     }, lvim.builtin.which_key.opts)
 end
 
+
+
+
 lvim.autocommands.custom_groups.text_filetype = {
     {"FileType", "text", "set tw=80"}
 }
-
-
