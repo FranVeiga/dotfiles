@@ -1,0 +1,87 @@
+#!/bin/sh
+alias j='z'
+alias f='zi'
+alias g='lazygit'
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+alias nvimrc='nvim ~/.config/nvim/'
+
+# alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
+
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# Remarkable
+alias remarkable_ssh='ssh root@10.11.99.1'
+alias restream='restream -p'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+# gpg encryption
+# verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+# receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
+# For when keys break
+alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+
+# systemd
+alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
+
+alias mach_java_mode="export SDKMAN_DIR="$HOME/.sdkman" && [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh""
+
+alias m="git checkout master"
+alias s="git checkout stable"
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias cls=' clear'
+alias ls='exa --group-directories-first'
+alias la='ls -aF'
+alias ll='la -lahF'
+alias lst='ls -lahTFL 3'
+alias lr='ls -lahRFL 3'
+alias python='python3'
+alias pip='pip3'
+alias rm='rm -vri'
+alias cd..='cd ..'
+alias pacman='sudo pacman'
+alias puto='clear && printf "\nPero escuchame una cosa hijo de re mil puta a mi no me decis puto \nme escuchaste pendejito de mierda asi que no te pases de vivo que te rompo todo \nla re concha de tu madre\n\n"'
+alias reputo='puto'
+alias skuni='clear && printf  "\nskiuniiiiiiii\n\n"'
+alias te_volvi_a_probar='echo tu boca no pierde sabor a caramelo oo oo oo oo'
+alias vifm='vifm .'
+alias wifi-menu='nmtui'
+alias VirtualBoxVM='/usr/lib/virtualbox/VirtualBoxVM'
+alias doom='~/.emacs.d/bin/doom'
+alias qtilerc='vim ~/.config/qtile/config.py'
+alias vimp='vim -u ~/.vimrc_plugins'
+alias mv='mv -vi'
+alias cp='cp -riv'
+alias mkdir='mkdir -vp'
+alias df='df -h'
+alias ip='ip -c'
+alias hamachid='sudo /opt/logmein-hamachi/bin/hamachid'
+alias emc='emacsclient -t'
+alias cat='bat'
