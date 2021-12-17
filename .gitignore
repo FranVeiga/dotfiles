@@ -1,2 +1,4 @@
 ./.config/ncspot/userstate.cbor
 ./.config/ncspot/userstate.toml
+./.config/zsh/plugins
+
